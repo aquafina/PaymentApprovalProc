@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="11.1.1.7.0.2.22" fileRevision="20120217"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+    <component name="PaymentApprovalProcess">
+        <topicDocumentations>
+            <topicDocumentation name="PaymentApprovalProcess">
+                <descriptions>
+                    <description locale="en">PaymentApprovalProcess</description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="EVT15834051903054">
+                <labels>
+                    <label locale="en">Start</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="EVT15834051903182">
+                <labels>
+                    <label locale="en">End</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15834051903261">
+                <labels>
+                    <label locale="en">UserTask</label>
+                </labels>
+            </topicDocumentation>
+            <topicDocumentation name="sf53"/>
+            <topicDocumentation name="sf54"/>
+        </topicDocumentations>
+    </component>
+</processDocumentation>
