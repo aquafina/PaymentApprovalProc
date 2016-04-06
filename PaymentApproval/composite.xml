@@ -12,9 +12,8 @@
            xmlns:ui="http://xmlns.oracle.com/soa/designer/">
   <import namespace="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess"
           location="Client_PaymentApprovalProcess.wsdl" importType="wsdl"/>
-  <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
-          location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
-          importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData"
+          location="GetApprovalData.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -31,6 +30,17 @@
   <component name="PaymentApprovalProcess">
     <implementation.bpmn src="processes/PaymentApprovalProcess.bpmn"/>
   </component>
+  <reference name="GetApprovalData" ui:wsdlLocation="GetApprovalData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData#wsdl.interface(GetApprovalData_ptt)"/>
+    <binding.jca config="GetApprovalData_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>Client_PaymentApprovalProcess</source.uri>
     <target.uri>PaymentApprovalProcess/References.Externals.Client_PaymentApprovalProcess.service</target.uri>

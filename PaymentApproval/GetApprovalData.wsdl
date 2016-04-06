@@ -1,0 +1,25 @@
+<?binding.jca GetApprovalData_db.jca?>
+<wsdl:definitions name="GetApprovalData" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData">
+    <plt:partnerLinkType name="GetApprovalData_plt">
+        <plt:role name="GetApprovalData_role">
+            <plt:portType name="tns:GetApprovalData_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" schemaLocation="xsd/GetApprovalData_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetApprovalDataSelect_inputParameters">
+        <wsdl:part name="GetApprovalDataSelect_inputParameters" element="top:GetApprovalDataSelect_p_check_no_p_batch_nameInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxPaymentApprovalDataCollection_msg">
+        <wsdl:part name="XxPaymentApprovalDataCollection" element="top:XxPaymentApprovalDataCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="GetApprovalData_ptt">
+        <wsdl:operation name="GetApprovalDataSelect">
+            <wsdl:input message="tns:GetApprovalDataSelect_inputParameters"/>
+            <wsdl:output message="tns:XxPaymentApprovalDataCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>
