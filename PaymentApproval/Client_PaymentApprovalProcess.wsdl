@@ -1,0 +1,34 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<wsdl:definitions
+     name="Client_PaymentApprovalProcess"
+     targetNamespace="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess"
+     xmlns:inp2="http://xmlns.oracle.com/singleString"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:inp1="http://www.example.org"
+     xmlns:tns="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess"
+    >
+    <wsdl:types>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://www.example.org" schemaLocation="xsd/process_input.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://xmlns.oracle.com/singleString" schemaLocation="xsd/singleString.xsd"/>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="requestMessage">
+        <wsdl:part name="input_params" element="inp1:ProcessInputParams"/>
+    </wsdl:message>
+    <wsdl:message name="callbackMessage">
+        <wsdl:part name="callback_var" element="inp2:singleString"/>
+    </wsdl:message>
+    <wsdl:portType name="start_payment_approval_process_ptt">
+        <wsdl:operation name="start_payment_approval_process">
+            <wsdl:input message="tns:requestMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:portType name="callback_ptt">
+        <wsdl:operation name="callback">
+            <wsdl:input message="tns:callbackMessage"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

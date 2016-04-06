@@ -86,6 +86,7 @@
       <list n="technologyScope">
          <string v="BPM"/>
          <string v="SOA"/>
+         <string v="XML"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">

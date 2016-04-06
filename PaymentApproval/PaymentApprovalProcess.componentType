@@ -4,4 +4,9 @@
                xmlns="http://xmlns.oracle.com/sca/1.0"
                xmlns:xs="http://www.w3.org/2001/XMLSchema"
                xmlns:ui="http://xmlns.oracle.com/soa/designer/">
+  <service name="References.Externals.Client_PaymentApprovalProcess.service"
+           ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
+    <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
+                    callbackInterface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(callback_ptt)"/>
+  </service>
 </componentType>

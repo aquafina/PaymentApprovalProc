@@ -12,19 +12,16 @@
                 <labels>
                     <label locale="en">Start</label>
                 </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
             </topicDocumentation>
             <topicDocumentation name="EVT15834051903182">
                 <labels>
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
-            <topicDocumentation name="ACT15834051903261">
-                <labels>
-                    <label locale="en">UserTask</label>
-                </labels>
-            </topicDocumentation>
             <topicDocumentation name="sf53"/>
-            <topicDocumentation name="sf54"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

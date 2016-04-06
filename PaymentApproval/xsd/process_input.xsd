@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns="http://www.example.org"
+            targetNamespace="http://www.example.org"
+            elementFormDefault="qualified">
+  <xsd:element name="ProcessInputParams">
+    <xsd:annotation>
+      <xsd:documentation>
+        A sample element
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="element1" type="xsd:string"/>
+        <xsd:element name="element2" type="xsd:string"/>
+        <xsd:element name="element3" type="xsd:string"/>
+        <xsd:element name="element4" type="xsd:string"/>
+        <xsd:element name="element5" type="xsd:string"/>
+        <xsd:element name="element6" type="xsd:string"/>
+        <xsd:element name="element7" type="xsd:string"/>
+        <xsd:element name="element8" type="xsd:string"/>
+        <xsd:element name="element9" type="xsd:string"/>
+        <xsd:element name="element10" type="xsd:string"/>
+        <xsd:element name="element11" type="xsd:string"/>
+        <xsd:element name="element12" type="xsd:string"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
