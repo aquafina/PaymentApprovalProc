@@ -45,4 +45,8 @@
     <source.uri>Client_PaymentApprovalProcess</source.uri>
     <target.uri>PaymentApprovalProcess/References.Externals.Client_PaymentApprovalProcess.service</target.uri>
   </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.Externals.GetApprovalData.reference</source.uri>
+    <target.uri>GetApprovalData</target.uri>
+  </wire>
 </composite>

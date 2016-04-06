@@ -9,4 +9,8 @@
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
                     callbackInterface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(callback_ptt)"/>
   </service>
+  <reference name="Services.Externals.GetApprovalData.reference"
+             ui:wsdlLocation="GetApprovalData.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData#wsdl.interface(GetApprovalData_ptt)"/>
+  </reference>
 </componentType>

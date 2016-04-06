@@ -1,13 +1,2 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Faults>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/ns:composite/ns:reference[@name='GetApprovalData']</loc>
-      <line>33</line>
-      <col>76</col>
-      <file>E:\Development Workspace\BPM\PaymentApprovalProc\PaymentApproval\composite.xml</file>
-      <name>E:\Development Workspace\BPM\PaymentApprovalProc\PaymentApproval\composite.xml</name>
-      <fix/>
-      <msg>Reference GetApprovalData does not exist as wire target</msg>
-   </Fault>
-</Faults>
+<Faults/>

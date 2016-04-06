@@ -21,7 +21,16 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
+            <topicDocumentation name="ACT15835654226763">
+                <labels>
+                    <label locale="en">GET_APPROVAL_DATA</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf53"/>
+            <topicDocumentation name="sf5"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
