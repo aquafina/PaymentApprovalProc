@@ -24,14 +24,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT15860081829065">
-                <labels>
-                    <label locale="en">Dummmy</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -53,19 +45,165 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="sf53"/>
-            <topicDocumentation name="sf5"/>
-            <topicDocumentation name="sf6"/>
-            <topicDocumentation name="sf7">
+            <topicDocumentation name="ACT15860301995141">
                 <labels>
-                    <label locale="en"></label>
+                    <label locale="en">GET_NEXT_APPROVER</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="sf9"/>
-            <topicDocumentation name="sf11"/>
+            <topicDocumentation name="GTW1586034692954">
+                <labels>
+                    <label locale="en">APPROVER_COUNT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15860449772470">
+                <labels>
+                    <label locale="en">APPROVE_DOCUMENT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15860558202230">
+                <labels>
+                    <label locale="en">dummy</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15860728593215">
+                <labels>
+                    <label locale="en">OUTCOME</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15860755460673">
+                <labels>
+                    <label locale="en">APPROVAL_TYPE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15860768086212">
+                <labels>
+                    <label locale="en">Flags</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15860776371212">
+                <labels>
+                    <label locale="en">EXIT_STATUS</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf53"/>
+            <topicDocumentation name="sf5"/>
+            <topicDocumentation name="sf6"/>
+            <topicDocumentation name="sf11">
+                <labels>
+                    <label locale="en">Yes</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf20"/>
+            <topicDocumentation name="sf22">
+                <labels>
+                    <label locale="en">No</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf27">
+                <labels>
+                    <label locale="en">Greater Then One</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf23">
+                <labels>
+                    <label locale="en">Equals To One</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf28"/>
+            <topicDocumentation name="sf29"/>
+            <topicDocumentation name="sf31">
+                <labels>
+                    <label locale="en">Must Be Zero</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf32">
+                <labels>
+                    <label locale="en">Approve</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf33">
+                <labels>
+                    <label locale="en">Single</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf35">
+                <labels>
+                    <label locale="en">Multilevel</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf36"/>
+            <topicDocumentation name="sf39">
+                <labels>
+                    <label locale="en">Rejects</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf40">
+                <labels>
+                    <label locale="en">No Approver Found</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf42">
+                <labels>
+                    <label locale="en">Hierarchy Consumed</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
         </topicDocumentations>
     </component>
 </processDocumentation>

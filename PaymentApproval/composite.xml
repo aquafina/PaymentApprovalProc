@@ -14,6 +14,11 @@
           location="Client_PaymentApprovalProcess.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData"
           location="GetApprovalData.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover"
+          location="GetNextApprover.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService"
+          location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl"
+          importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -30,9 +35,23 @@
   <component name="PaymentApprovalProcess">
     <implementation.bpmn src="processes/PaymentApprovalProcess.bpmn"/>
   </component>
+  <component name="APPROVE_PAYMENT_DOCUMENT">
+    <implementation.workflow src="APPROVE_PAYMENT_DOCUMENT.task"/>
+  </component>
   <reference name="GetApprovalData" ui:wsdlLocation="GetApprovalData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData#wsdl.interface(GetApprovalData_ptt)"/>
     <binding.jca config="GetApprovalData_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
+  <reference name="GetNextApprover" ui:wsdlLocation="GetNextApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover#wsdl.interface(GetNextApprover_ptt)"/>
+    <binding.jca config="GetNextApprover_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>
@@ -48,5 +67,13 @@
   <wire>
     <source.uri>PaymentApprovalProcess/Services.Externals.GetApprovalData.reference</source.uri>
     <target.uri>GetApprovalData</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.Externals.GetNextApprover.reference</source.uri>
+    <target.uri>GetNextApprover</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/HumanTasks.APPROVE_PAYMENT_DOCUMENT.reference</source.uri>
+    <target.uri>APPROVE_PAYMENT_DOCUMENT/TaskService</target.uri>
   </wire>
 </composite>

@@ -1,0 +1,25 @@
+<?binding.jca GetNextApprover_db.jca?>
+<wsdl:definitions name="GetNextApprover" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover">
+    <plt:partnerLinkType name="GetNextApprover_plt">
+        <plt:role name="GetNextApprover_role">
+            <plt:portType name="tns:GetNextApprover_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" schemaLocation="xsd/GetNextApprover_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetNextApproverSelect_inputParameters">
+        <wsdl:part name="GetNextApproverSelect_inputParameters" element="top:GetNextApproverSelect_child_idInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxEbsUserHierarchyCollection_msg">
+        <wsdl:part name="XxEbsUserHierarchyCollection" element="top:XxEbsUserHierarchyCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="GetNextApprover_ptt">
+        <wsdl:operation name="GetNextApproverSelect">
+            <wsdl:input message="tns:GetNextApproverSelect_inputParameters"/>
+            <wsdl:output message="tns:XxEbsUserHierarchyCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

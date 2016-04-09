@@ -1,0 +1,14 @@
+<adapter-config name="GetNextApprover" adapter="Database Adapter" wsdlLocation="GetNextApprover.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="GetNextApprover_ptt" operation="GetNextApproverSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="GetNextApprover.XxEbsUserHierarchy"/>
+      <property name="QueryName" value="GetNextApproverSelect"/>
+      <property name="MappingsMetaDataURL" value="GetNextApprover-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

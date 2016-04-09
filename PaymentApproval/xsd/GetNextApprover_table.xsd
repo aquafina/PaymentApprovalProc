@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxEbsUserHierarchyCollection" type="XxEbsUserHierarchyCollection"/>
+   <xs:complexType name="XxEbsUserHierarchyCollection">
+      <xs:sequence>
+         <xs:element name="XxEbsUserHierarchy" type="XxEbsUserHierarchy" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxEbsUserHierarchy">
+      <xs:sequence>
+         <xs:element name="parentPersonId" type="xs:decimal" nillable="true"/>
+         <xs:element name="userName" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="100"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="childPersonId" type="xs:long" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GetNextApproverSelect_child_idInputParameters" type="GetNextApproverSelect_child_id"/>
+   <xs:complexType name="GetNextApproverSelect_child_id">
+      <xs:sequence>
+         <xs:element name="child_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

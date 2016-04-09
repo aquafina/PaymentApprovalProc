@@ -13,4 +13,13 @@
              ui:wsdlLocation="GetApprovalData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData#wsdl.interface(GetApprovalData_ptt)"/>
   </reference>
+  <reference name="Services.Externals.GetNextApprover.reference"
+             ui:wsdlLocation="GetNextApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover#wsdl.interface(GetNextApprover_ptt)"/>
+  </reference>
+  <reference name="HumanTasks.APPROVE_PAYMENT_DOCUMENT.reference"
+             ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                    callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+  </reference>
 </componentType>

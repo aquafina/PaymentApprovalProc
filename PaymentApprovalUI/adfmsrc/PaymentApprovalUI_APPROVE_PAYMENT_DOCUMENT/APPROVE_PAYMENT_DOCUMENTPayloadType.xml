@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.64.93"
+          id="APPROVE_PAYMENT_DOCUMENTPayloadType"
+          Package="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
+          BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.APPROVE_PAYMENT_DOCUMENTPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="XxPaymentApprovalDataCollection" IsCollection="true"
+                     BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxPaymentApprovalDataCollection"
+                     CollectionBeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxPaymentApprovalDataCollection_XxPaymentApprovalDataCollection_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Xx Payment Approval Data Collection"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="XxPaymentApprovalDataCollection"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

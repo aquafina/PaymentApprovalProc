@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<hwTaskFlows xmlns="http://xmlns.oracle.com/bpel/workflow/hwTaskFlowProperties">
+   <ApplicationName>worklist</ApplicationName>
+   <LookupType>LOCAL</LookupType>
+   <TaskFlowDeploy>false</TaskFlowDeploy>
+   <TaskFlowServer>
+      <hostName/>
+      <httpPort/>
+      <httpsPort/>
+   </TaskFlowServer>
+<hwTaskFlow><WorkflowName>APPROVE_PAYMENT_DOCUMENT</WorkflowName><TaskDefinitionNamespace>http://xmlns.oracle.com/PaymentApprovalProc/PaymentApproval/APPROVE_PAYMENT_DOCUMENT</TaskDefinitionNamespace><TaskFlowId>APPROVE_PAYMENT_DOCUMENT_TaskFlow</TaskFlowId><TaskFlowFileName>WEB-INF/APPROVE_PAYMENT_DOCUMENT_TaskFlow.xml</TaskFlowFileName></hwTaskFlow></hwTaskFlows>
