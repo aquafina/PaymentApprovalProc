@@ -29,8 +29,43 @@
                     <label locale="en">End</label>
                 </labels>
             </topicDocumentation>
+            <topicDocumentation name="ACT15860042715727">
+                <labels>
+                    <label locale="en">INIT_PROC_STATE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15860068349583">
+                <labels>
+                    <label locale="en">HAS_DATA</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15860081829065">
+                <labels>
+                    <label locale="en">Dummmy</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf53"/>
             <topicDocumentation name="sf5"/>
+            <topicDocumentation name="sf6"/>
+            <topicDocumentation name="sf7">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf9"/>
+            <topicDocumentation name="sf11"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
