@@ -93,13 +93,20 @@
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
+         <xs:element name="personId" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="GetApprovalDataSelect_p_check_no_p_batch_nameInputParameters" type="GetApprovalDataSelect_p_check_no_p_batch_name"/>
-   <xs:complexType name="GetApprovalDataSelect_p_check_no_p_batch_name">
+   <xs:element name="GetApprovalDataSelect_batch_id_invoice_idInputParameters" type="GetApprovalDataSelect_batch_id_invoice_id"/>
+   <xs:complexType name="GetApprovalDataSelect_batch_id_invoice_id">
       <xs:sequence>
-         <xs:element name="p_check_no" type="xs:string" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="p_batch_name" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="batch_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="invoice_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>

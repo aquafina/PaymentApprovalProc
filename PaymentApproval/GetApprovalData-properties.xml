@@ -1,6 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.PERSON_ID:db_column_not_null">false</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.NET_AMOUNT_PAID:db_column_precision">0</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.BATCH_NAME:db_column_size">12</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.GROSS_AMOUNT_PAID:db_column_precision">0</entry>
@@ -42,6 +43,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_DATE:db_column_not_null">false</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.CHECK_ID:db_column_type">CHAR</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.BANK_NAME:db_column_size">17</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_19">PERSON_ID</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_18">INVOICE_ID</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.DIVISION:db_column_size">8</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_17">INVOICE_PAYMENT_ID</entry>
@@ -55,6 +57,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_10">VENDOR_NAME</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_PAYMENT_ID:db_column_size">5</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_AMOUNT:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.PERSON_ID:db_column_size">4</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_NO:db_column_type">CHAR</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.PAYMENT_DATE:db_column_type">DATE</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ST_WITH_HOLDING:db_column_type">NUMBER</entry>
@@ -68,6 +71,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA.PAYMENT_VR:db_column_not_null">false</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_PAYMENT_ID:db_column_type">CHAR</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.GROSS_AMOUNT_PAID:db_column_type">NUMBER</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.PERSON_ID:db_column_type">CHAR</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_AMOUNT:db_column_type">NUMBER</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.CHECK_NO:db_column_size">6</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ADVANCE_PAYMENT_APPLIED:db_column_precision">0</entry>

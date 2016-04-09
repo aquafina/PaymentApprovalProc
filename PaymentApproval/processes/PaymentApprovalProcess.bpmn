@@ -41,7 +41,7 @@
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
                             <ns5:Position x="0" y="0"/>
-                            <ns5:Size width="200" height="0"/>
+                            <ns5:Size width="374" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -53,7 +53,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="238" y="100"/>
+                        <ns5:Position x="231" y="34"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -70,10 +70,10 @@
                 </ns5:OracleExtensions>
             </extensionElements>
             <ioSpecification>
-                <dataInput name="getApprovalDataSelectPCheckNoPBatchNameInputParameters" id="getApprovalDataSelectPCheckNoPBatchNameInputParameters">
+                <dataInput name="getApprovalDataSelectBatchIdInvoiceIdInputParameters" id="getApprovalDataSelectBatchIdInvoiceIdInputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" element="GetApprovalDataSelect_p_check_no_p_batch_nameInputParameters" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" element="GetApprovalDataSelect_batch_id_invoice_idInputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -85,7 +85,7 @@
                     </extensionElements>
                 </dataOutput>
                 <inputSet id="ACT15835654226763_uniqueInputSet">
-                    <dataInputRefs>getApprovalDataSelectPCheckNoPBatchNameInputParameters</dataInputRefs>
+                    <dataInputRefs>getApprovalDataSelectBatchIdInvoiceIdInputParameters</dataInputRefs>
                 </inputSet>
                 <outputSet id="ACT15835654226763_uniqueOutputSet">
                     <dataOutputRefs>xxPaymentApprovalDataCollection</dataOutputRefs>
@@ -96,7 +96,7 @@
                     <ns5:OracleExtensions/>
                 </extensionElements>
                 <sourceRef>DO_ProcessInputParams</sourceRef>
-                <targetRef>getApprovalDataSelectPCheckNoPBatchNameInputParameters</targetRef>
+                <targetRef>getApprovalDataSelectBatchIdInvoiceIdInputParameters</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
@@ -110,7 +110,7 @@
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectPCheckNoPBatchNameInputParameters')/ns:p_batch_name
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectBatchIdInvoiceIdInputParameters')/ns:batch_id
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -124,14 +124,14 @@
                             <ns5:DataAssignment operation="copy"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element2
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element10
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectPCheckNoPBatchNameInputParameters')/ns:p_check_no
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectBatchIdInvoiceIdInputParameters')/ns:invoice_id
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -236,7 +236,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="544" y="104"/>
+                        <ns5:Position x="817" y="107"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -252,11 +252,13 @@
         <sequenceFlow sourceRef="EVT15834051903054" targetRef="ACT15835654226763" name="sf53" id="sf53">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="133" y="29"/>
+                    </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="133,29" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>
@@ -264,11 +266,13 @@
         <sequenceFlow sourceRef="ACT15835654226763" targetRef="EVT15834051903182" name="sf5" id="sf5">
             <extensionElements>
                 <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="685" y="29"/>
+                    </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="685,29" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
             </extensionElements>

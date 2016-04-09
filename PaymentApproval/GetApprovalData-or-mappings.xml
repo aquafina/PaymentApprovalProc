@@ -6,8 +6,8 @@
          <class>GetApprovalData.XxPaymentApprovalData</class>
          <alias>XX_PAYMENT_APPROVAL_DATA</alias>
          <primary-key>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
@@ -15,27 +15,27 @@
                <query name="GetApprovalDataSelect" xsi:type="read-all-query">
                   <criteria operator="or" xsi:type="logic-expression">
                      <left operator="equal" xsi:type="relation-expression">
-                        <left name="checkNo" xsi:type="query-key-expression">
+                        <left name="batchId" xsi:type="query-key-expression">
                            <base xsi:type="base-expression"/>
                         </left>
                         <right xsi:type="parameter-expression">
-                           <parameter name="p_check_no" xsi:type="column"/>
+                           <parameter name="batch_id" xsi:type="column"/>
                         </right>
                      </left>
                      <right operator="equal" xsi:type="relation-expression">
-                        <left name="batchName" xsi:type="query-key-expression">
+                        <left name="invoiceId" xsi:type="query-key-expression">
                            <base xsi:type="base-expression"/>
                         </left>
                         <right xsi:type="parameter-expression">
-                           <parameter name="p_batch_name" xsi:type="column"/>
+                           <parameter name="invoice_id" xsi:type="column"/>
                         </right>
                      </right>
                   </criteria>
                   <arguments>
-                     <argument name="p_check_no">
+                     <argument name="batch_id">
                         <type>java.lang.String</type>
                      </argument>
-                     <argument name="p_batch_name">
+                     <argument name="invoice_id">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>
@@ -140,6 +140,11 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>invoiceId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>personId</attribute-name>
+               <field table="XX_PAYMENT_APPROVAL_DATA" name="PERSON_ID" xsi:type="column"/>
                <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>

@@ -8,6 +8,14 @@
                     <description locale="en">PaymentApprovalProcess</description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15835654226763">
+                <labels>
+                    <label locale="en">GET_APPROVAL_DATA</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -20,14 +28,6 @@
                 <labels>
                     <label locale="en">End</label>
                 </labels>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15835654226763">
-                <labels>
-                    <label locale="en">GET_APPROVAL_DATA</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf53"/>
             <topicDocumentation name="sf5"/>
