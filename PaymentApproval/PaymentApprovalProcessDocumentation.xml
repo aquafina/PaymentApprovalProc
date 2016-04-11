@@ -56,6 +56,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15860866679277">
+                <labels>
+                    <label locale="en">ASSIGN_LEAF</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15860952496327">
+                <labels>
+                    <label locale="en">CURRENT_APPROVER</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -104,22 +120,6 @@
             <topicDocumentation name="GTW15860776371212">
                 <labels>
                     <label locale="en">EXIT_STATUS</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15860866679277">
-                <labels>
-                    <label locale="en">ASSIGN_LEAF</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15860952496327">
-                <labels>
-                    <label locale="en">CURRENT_APPROVER</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>

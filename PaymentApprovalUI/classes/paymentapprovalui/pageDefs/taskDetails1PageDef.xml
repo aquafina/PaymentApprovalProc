@@ -78,6 +78,16 @@
                       DataControl="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
                       BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.ucmMetadataItemType"
                       id="ucmMetadataItemIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="payloadIterator"
+                      Binds="XxEbsUserHierarchyCollection" RangeSize="25"
+                      DataControl="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
+                      BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxEbsUserHierarchyCollection"
+                      id="XxEbsUserHierarchyCollectionIterator"/>
+    <accessorIterator MasterBinding="XxEbsUserHierarchyCollectionIterator"
+                      Binds="XxEbsUserHierarchy" RangeSize="25"
+                      DataControl="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
+                      BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxEbsUserHierarchy"
+                      id="XxEbsUserHierarchyIterator"/>
   </executables>
   <bindings>
     <methodAction id="getTaskDetails" RequiresUpdateModel="true"
@@ -607,5 +617,22 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="XxEbsUserHierarchyIterator"
+                     id="parentPersonId">
+      <AttrNames>
+        <Item Value="parentPersonId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxEbsUserHierarchyIterator" id="userName">
+      <AttrNames>
+        <Item Value="userName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="XxEbsUserHierarchyIterator"
+                     id="childPersonId">
+      <AttrNames>
+        <Item Value="childPersonId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

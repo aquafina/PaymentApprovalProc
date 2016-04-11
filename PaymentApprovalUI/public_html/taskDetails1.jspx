@@ -10,6 +10,7 @@
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <f:view>
     <af:document id="d1" title="#{bindings.title.inputValue}">
+      <af:messages id="m1"/>
       <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
       <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
       <af:form id="f1" usesUpload="true">
@@ -287,6 +288,37 @@
               <af:showDetailHeader size="2" id="apCntHd"
                                    text="#{resources.CONTENTS}"
                                    disclosed="#{actionAvailable.discloseContents}">
+                <af:panelFormLayout id="pfl10">
+                  <af:inputText value="#{bindings.parentPersonId.inputValue}"
+                                label="#{bindings.parentPersonId.hints.label}"
+                                required="#{bindings.parentPersonId.hints.mandatory}"
+                                columns="#{bindings.parentPersonId.hints.displayWidth}"
+                                maximumLength="#{bindings.parentPersonId.hints.precision}"
+                                shortDesc="#{bindings.parentPersonId.hints.tooltip}"
+                                id="it22">
+                    <f:validator binding="#{bindings.parentPersonId.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.userName.inputValue}"
+                                label="#{bindings.userName.hints.label}"
+                                required="#{bindings.userName.hints.mandatory}"
+                                columns="#{bindings.userName.hints.displayWidth}"
+                                maximumLength="#{bindings.userName.hints.precision}"
+                                shortDesc="#{bindings.userName.hints.tooltip}"
+                                id="it23">
+                    <f:validator binding="#{bindings.userName.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.childPersonId.inputValue}"
+                                label="#{bindings.childPersonId.hints.label}"
+                                required="#{bindings.childPersonId.hints.mandatory}"
+                                columns="#{bindings.childPersonId.hints.displayWidth}"
+                                maximumLength="#{bindings.childPersonId.hints.precision}"
+                                shortDesc="#{bindings.childPersonId.hints.tooltip}"
+                                id="it21">
+                    <f:validator binding="#{bindings.childPersonId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.childPersonId.format}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
                 <af:panelGroupLayout id="plPnl76" layout="horizontal"
                                      shortDesc="#{resources.CONTENTS}">
                   <af:commandButton actionListener="#{bindings.CreateInsert.execute}"

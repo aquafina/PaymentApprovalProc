@@ -8,7 +8,8 @@
                 xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath"
                 xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath"
                 xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
-                xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData">
+                xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"
+                xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover">
    <name>APPROVE_PAYMENT_DOCUMENT</name>
    <id>${domain_id}_${process_id}_${process_revision}_APPROVE_PAYMENT_DOCUMENT</id>
    <title type="STATIC"><value>PAYMENT DOCUMENT</value></title>
@@ -24,7 +25,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1">
             <participant name="default.DefaultPerformer">
-               <resource type="STATIC" identityType="user">mik</resource>
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns2:XxEbsUserHierarchyCollection/ns2:XxEbsUserHierarchy[1]/ns2:userName</resource>
             </participant>
          </stage>
       </participants>
@@ -38,7 +39,9 @@
          <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
       </notification>
    </routingSlip>
-   <workflowConfiguration features="ucm" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration">
+   <workflowConfiguration features="ucm"
+                          xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
+                          xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData">
       <outcomes>
          <outcome>APPROVE</outcome>
          <outcome>REJECT</outcome>
@@ -47,7 +50,11 @@
                externalSchema="false">
          <messageAttribute name="XxPaymentApprovalDataCollection"
                            attributeType="ELEMENT"
-                           type="ns0:XxPaymentApprovalDataCollection"
+                           type="ns1:XxPaymentApprovalDataCollection"
+                           updatable="false" external="false"/>
+         <messageAttribute name="XxEbsUserHierarchyCollection"
+                           attributeType="ELEMENT"
+                           type="ns0:XxEbsUserHierarchyCollection"
                            updatable="false" external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>

@@ -13,7 +13,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/E:/Development Workspace/BPM/PaymentApprovalProc/PaymentApproval/xsd/APPROVE_PAYMENT_DOCUMENTWorkflowTask.xsd"
+                      SchemaLocation="file:/E:/Development Workspace/BPM/PaymentApprovalProc/PaymentApprovalUI/../PaymentApproval/xsd/APPROVE_PAYMENT_DOCUMENTWorkflowTask.xsd"
                       RootElement="task"
                       rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../PaymentApproval/APPROVE_PAYMENT_DOCUMENT.task"

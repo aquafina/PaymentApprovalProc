@@ -17,4 +17,17 @@
                 Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
     </Properties>
   </AccessorAttribute>
+  <AccessorAttribute id="XxEbsUserHierarchyCollection" IsCollection="true"
+                     BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxEbsUserHierarchyCollection"
+                     CollectionBeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxEbsUserHierarchyCollection_XxEbsUserHierarchyCollection_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Xx Ebs User Hierarchy Collection"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="XxEbsUserHierarchyCollection"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover"/>
+    </Properties>
+  </AccessorAttribute>
 </JavaBean>
