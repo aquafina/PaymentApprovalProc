@@ -1,0 +1,14 @@
+<adapter-config name="LogError" adapter="Database Adapter" wsdlLocation="LogError.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="LogError_ptt" operation="insert">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="LogError.XxPaymentProcessErrors"/>
+      <property name="DmlType" value="insert"/>
+      <property name="MappingsMetaDataURL" value="LogError-or-mappings.xml"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

@@ -42,7 +42,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15860558202230">
                 <labels>
-                    <label locale="en">LOG_ERROR</label>
+                    <label locale="en">ASSIGN_ERROR_MSG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -120,6 +120,22 @@
             <topicDocumentation name="GTW15860776371212">
                 <labels>
                     <label locale="en">EXIT_STATUS</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15876214173697">
+                <labels>
+                    <label locale="en">LOG_ERROR_MSG</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15876746210683">
+                <labels>
+                    <label locale="en">ASSIGN_ERROR_MSG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -226,6 +242,8 @@
             </topicDocumentation>
             <topicDocumentation name="sf26"/>
             <topicDocumentation name="sf30"/>
+            <topicDocumentation name="sf37"/>
+            <topicDocumentation name="sf38"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

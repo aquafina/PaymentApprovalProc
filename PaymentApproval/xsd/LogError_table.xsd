@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/LogError" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/LogError" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxPaymentProcessErrorsCollection" type="XxPaymentProcessErrorsCollection"/>
+   <xs:complexType name="XxPaymentProcessErrorsCollection">
+      <xs:sequence>
+         <xs:element name="XxPaymentProcessErrors" type="XxPaymentProcessErrors" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxPaymentProcessErrors">
+      <xs:sequence>
+         <xs:element name="errorId" type="xs:decimal" nillable="true"/>
+         <xs:element name="errorText" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="1000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="datetime" type="xs:dateTime" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
