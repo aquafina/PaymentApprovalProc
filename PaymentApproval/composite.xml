@@ -21,6 +21,10 @@
           importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/LogError"
           location="LogError.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/UpdateFlags"
+          location="UpdateFlags.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags"
+          location="BP_UpdateFlags.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -39,6 +43,12 @@
   </component>
   <component name="APPROVE_PAYMENT_DOCUMENT">
     <implementation.workflow src="APPROVE_PAYMENT_DOCUMENT.task"/>
+  </component>
+  <component name="BP_UpdateFlags" version="1.1">
+    <implementation.bpel src="BP_UpdateFlags.bpel"/>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
   </component>
   <reference name="GetApprovalData" ui:wsdlLocation="GetApprovalData.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetApprovalData#wsdl.interface(GetApprovalData_ptt)"/>
@@ -73,6 +83,17 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="UpdateFlags" ui:wsdlLocation="UpdateFlags.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/UpdateFlags#wsdl.interface(UpdateFlags_ptt)"/>
+    <binding.jca config="UpdateFlags_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>Client_PaymentApprovalProcess</source.uri>
     <target.uri>PaymentApprovalProcess/References.Externals.Client_PaymentApprovalProcess.service</target.uri>
@@ -92,5 +113,13 @@
   <wire>
     <source.uri>PaymentApprovalProcess/Services.Externals.LogError.reference</source.uri>
     <target.uri>LogError</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BP_UpdateFlags/UpdateFlags</source.uri>
+    <target.uri>UpdateFlags</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.BPEL.BP_UpdateFlags.The_client_update_flag_bpfel.reference</source.uri>
+    <target.uri>BP_UpdateFlags/the_client_update_flag_bpfel</target.uri>
   </wire>
 </composite>

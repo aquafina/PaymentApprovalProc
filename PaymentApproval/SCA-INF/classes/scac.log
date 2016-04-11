@@ -1,8 +1,24 @@
-Apr 11, 2016 2:40:49 PM oracle.mds
+Apr 11, 2016 5:09:20 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Apr 11, 2016 2:40:49 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Apr 11, 2016 5:09:20 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Apr 11, 2016 2:40:49 PM oracle.mds
+Apr 11, 2016 5:09:20 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Apr 11, 2016 2:40:50 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Apr 11, 2016 5:09:21 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
+Apr 11, 2016 5:09:24 PM com.collaxa.cube.CubeLogger info
+INFO: validating "BP_UpdateFlags.bpel" ...
+Apr 11, 2016 5:09:24 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+WARNING: JRF is unable to determine the current application server platform.
+Apr 11, 2016 5:09:24 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+WARNING: JRF is unable to determine the current application server platform.
+Apr 11, 2016 5:09:25 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_UpdateFlags" in 117.4 milliseconds [nodes 7=0+7, 59.6 nodes/sec]
+Apr 11, 2016 5:09:31 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_UpdateFlags" in 5.484 seconds
+Apr 11, 2016 5:09:31 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 1.3 milliseconds
+
+Apr 11, 2016 5:09:31 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_UpdateFlags" in 10.4 milliseconds
+

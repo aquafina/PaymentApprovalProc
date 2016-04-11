@@ -1,12 +1,15 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-   <xs:element name="XxPaymentApprovalDataCollection" type="XxPaymentApprovalDataCollection"/>
-   <xs:complexType name="XxPaymentApprovalDataCollection">
+   <xs:element name="XxPaymentApprovalDataCollection_copy"
+               type="XxPaymentApprovalDataCollection_complex_copy"/>
+   <xs:complexType name="XxPaymentApprovalDataCollection_complex_copy">
       <xs:sequence>
-         <xs:element name="XxPaymentApprovalData" type="XxPaymentApprovalData" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="XxPaymentApprovalData"
+                     type="XxPaymentApprovalData_copy" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="outcome" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:complexType name="XxPaymentApprovalData">
+   <xs:complexType name="XxPaymentApprovalData_copy">
       <xs:sequence>
          <xs:element name="paymentVr" type="xs:decimal" minOccurs="0" nillable="true"/>
          <xs:element name="invoiceNo" minOccurs="0">
@@ -60,11 +63,12 @@
          <xs:element name="personId" type="xs:long" minOccurs="0" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="GetApprovalDataSelect_batch_id_check_idInputParameters" type="GetApprovalDataSelect_batch_id_check_id"/>
-   <xs:complexType name="GetApprovalDataSelect_batch_id_check_id">
+   <xs:element name="GetApprovalDataSelect_batch_id_invoice_idInputParameters_copy"
+               type="GetApprovalDataSelect_batch_id_invoice_id_copy"/>
+   <xs:complexType name="GetApprovalDataSelect_batch_id_invoice_id_copy">
       <xs:sequence>
-         <xs:element name="batch_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="check_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="batch_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="invoice_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>

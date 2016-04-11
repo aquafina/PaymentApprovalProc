@@ -23,11 +23,11 @@
                         </right>
                      </left>
                      <right operator="equal" xsi:type="relation-expression">
-                        <left name="invoiceId" xsi:type="query-key-expression">
+                        <left name="checkId" xsi:type="query-key-expression">
                            <base xsi:type="base-expression"/>
                         </left>
                         <right xsi:type="parameter-expression">
-                           <parameter name="invoice_id" xsi:type="column"/>
+                           <parameter name="check_id" xsi:type="column"/>
                         </right>
                      </right>
                   </criteria>
@@ -35,7 +35,7 @@
                      <argument name="batch_id">
                         <type>java.lang.String</type>
                      </argument>
-                     <argument name="invoice_id">
+                     <argument name="check_id">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>

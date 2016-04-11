@@ -26,4 +26,8 @@
              ui:wsdlLocation="LogError.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/LogError#wsdl.interface(LogError_ptt)"/>
   </reference>
+  <reference name="Services.BPEL.BP_UpdateFlags.The_client_update_flag_bpfel.reference"
+             ui:wsdlLocation="BP_UpdateFlags.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags#wsdl.interface(BP_UpdateFlags)"/>
+  </reference>
 </componentType>

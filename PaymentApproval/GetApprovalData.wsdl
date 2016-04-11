@@ -11,7 +11,7 @@
         </schema>
     </wsdl:types>
     <wsdl:message name="GetApprovalDataSelect_inputParameters">
-        <wsdl:part name="GetApprovalDataSelect_inputParameters" element="top:GetApprovalDataSelect_batch_id_invoice_idInputParameters"/>
+        <wsdl:part name="GetApprovalDataSelect_inputParameters" element="top:GetApprovalDataSelect_batch_id_check_idInputParameters"/>
     </wsdl:message>
     <wsdl:message name="XxPaymentApprovalDataCollection_msg">
         <wsdl:part name="XxPaymentApprovalDataCollection" element="top:XxPaymentApprovalDataCollection"/>

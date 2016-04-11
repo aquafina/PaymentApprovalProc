@@ -88,6 +88,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15878016976192">
+                <labels>
+                    <label locale="en">UPDATE_FLAGS</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -244,6 +252,7 @@
             <topicDocumentation name="sf30"/>
             <topicDocumentation name="sf37"/>
             <topicDocumentation name="sf38"/>
+            <topicDocumentation name="sf41"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
