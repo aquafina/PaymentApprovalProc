@@ -6,7 +6,7 @@
          <class>GetApprovalData.XxPaymentApprovalData</class>
          <alias>XX_PAYMENT_APPROVAL_DATA</alias>
          <primary-key>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
          </primary-key>
          <events/>
@@ -50,7 +50,7 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>paymentVr</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="PAYMENT_VR" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>invoiceNo</attribute-name>
@@ -115,7 +115,7 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>checkNo</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_NO" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>batchName</attribute-name>
@@ -125,27 +125,27 @@
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>batchId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>checkId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_ID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>invoicePaymentId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_PAYMENT_ID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>invoiceId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
             <attribute-mapping xsi:type="direct-mapping">
                <attribute-name>personId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="PERSON_ID" xsi:type="column"/>
-               <attribute-classification>java.lang.String</attribute-classification>
+               <attribute-classification>java.lang.Long</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
          <descriptor-type>independent</descriptor-type>

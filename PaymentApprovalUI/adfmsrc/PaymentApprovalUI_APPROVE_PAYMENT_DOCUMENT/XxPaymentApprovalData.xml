@@ -4,12 +4,12 @@
           Package="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
           BeanClass="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT.XxPaymentApprovalData"
           isJavaBased="false">
-  <Attribute Name="paymentVr" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="paymentVr" IsUpdateable="0" Type="java.math.BigDecimal">
     <Properties>
       <CustomProperties>
+        <Property Name="maxLength" Value="8"/>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="8"/>
         <Property Name="nextSibling" Value="invoiceNo"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
@@ -19,7 +19,7 @@
         <Property Name="originalName" Value="paymentVr"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
+        <Property Name="type" Value="java.math.BigDecimal"/>
       </CustomProperties>
     </Properties>
   </Attribute>
@@ -28,13 +28,13 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="5"/>
+        <Property Name="maxLength" Value="50"/>
         <Property Name="nextSibling" Value="invoiceDate"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Invoice No"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="invoiceNo"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
@@ -175,13 +175,13 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="8"/>
+        <Property Name="maxLength" Value="240"/>
         <Property Name="nextSibling" Value="vendorName"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Division"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="division"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
@@ -194,7 +194,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="11"/>
+        <Property Name="maxLength" Value="240"/>
         <Property Name="nextSibling" Value="paymentDate"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
@@ -218,7 +218,7 @@
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Payment Date"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="paymentDate"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
@@ -231,7 +231,7 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="17"/>
+        <Property Name="maxLength" Value="360"/>
         <Property Name="nextSibling" Value="checkNo"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
@@ -245,22 +245,25 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="checkNo" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="checkNo" IsUpdateable="0" Type="java.lang.Long">
     <Properties>
       <CustomProperties>
+        <Property Name="maxLength" Value="6"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
+        <Property Name="originalName" Value="checkNo"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="6"/>
         <Property Name="nextSibling" Value="batchName"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
         <Property Name="LABEL" Value="Check No"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="checkNo"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
+        <Property Name="type" Value="java.lang.Long"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
+        <Property Name="minOccurs" Value="0"/>
       </CustomProperties>
     </Properties>
   </Attribute>
@@ -269,13 +272,13 @@
       <CustomProperties>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="12"/>
+        <Property Name="maxLength" Value="50"/>
         <Property Name="nextSibling" Value="batchId"/>
         <Property Name="minOccurs" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Batch Name"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="batchName"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
@@ -283,95 +286,110 @@
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="batchId" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="batchId" IsUpdateable="0" Type="java.lang.Long">
     <Properties>
       <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
         <Property Name="maxLength" Value="7"/>
-        <Property Name="nextSibling" Value="checkId"/>
-        <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Batch Id"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
         <Property Name="originalName" Value="batchId"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
+        <Property Name="nextSibling" Value="checkId"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="LABEL" Value="Batch Id"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
+        <Property Name="type" Value="java.lang.Long"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
+        <Property Name="minOccurs" Value="1"/>
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="checkId" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="checkId" IsUpdateable="0" Type="java.lang.Long">
     <Properties>
       <CustomProperties>
-        <Property Name="nextSiblingNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
         <Property Name="maxLength" Value="5"/>
-        <Property Name="nextSibling" Value="invoicePaymentId"/>
-        <Property Name="minOccurs" Value="1"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Check Id"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
         <Property Name="originalName" Value="checkId"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
-      </CustomProperties>
-    </Properties>
-  </Attribute>
-  <Attribute Name="invoicePaymentId" IsUpdateable="0" Type="java.lang.String">
-    <Properties>
-      <CustomProperties>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="5"/>
-        <Property Name="nextSibling" Value="invoiceId"/>
+        <Property Name="nextSibling" Value="invoicePaymentId"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="LABEL" Value="Check Id"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
+        <Property Name="type" Value="java.lang.Long"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
         <Property Name="minOccurs" Value="0"/>
-        <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Invoice Payment Id"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="invoicePaymentId"/>
-        <Property Name="targetNamespace"
-                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="invoiceId" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="invoicePaymentId" IsUpdateable="0" Type="java.lang.Long">
     <Properties>
       <CustomProperties>
+        <Property Name="maxLength" Value="5"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
+        <Property Name="originalName" Value="invoicePaymentId"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nextSiblingNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="maxLength" Value="9"/>
-        <Property Name="nextSibling" Value="personId"/>
-        <Property Name="minOccurs" Value="1"/>
+        <Property Name="nextSibling" Value="invoiceId"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="LABEL" Value="Invoice Payment Id"/>
         <Property Name="maxOccurs" Value="1"/>
-        <Property Name="LABEL" Value="Invoice Id"/>
-        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
-        <Property Name="nillable" Value="true"/>
-        <Property Name="originalName" Value="invoiceId"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
+        <Property Name="type" Value="java.lang.Long"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
+        <Property Name="minOccurs" Value="0"/>
       </CustomProperties>
     </Properties>
   </Attribute>
-  <Attribute Name="personId" IsUpdateable="0" Type="java.lang.String">
+  <Attribute Name="invoiceId" IsUpdateable="0" Type="java.lang.Long">
+    <Properties>
+      <CustomProperties>
+        <Property Name="maxLength" Value="9"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
+        <Property Name="originalName" Value="invoiceId"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
+        <Property Name="nextSibling" Value="personId"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="LABEL" Value="Invoice Id"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
+        <Property Name="type" Value="java.lang.Long"/>
+        <Property Name="targetNamespace"
+                  Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="personId" IsUpdateable="0" Type="java.lang.Long">
     <Properties>
       <CustomProperties>
         <Property Name="maxLength" Value="4"/>
         <Property Name="minOccurs" Value="0"/>
+        <Property Name="fractionDigits" Value="0"/>
         <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="9223372036854775807"/>
         <Property Name="LABEL" Value="Person Id"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="true"/>
         <Property Name="originalName" Value="personId"/>
+        <Property Name="minInclusive" Value="-9223372036854775808"/>
         <Property Name="targetNamespace"
                   Value="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
-        <Property Name="type" Value="java.lang.String"/>
+        <Property Name="type" Value="java.lang.Long"/>
       </CustomProperties>
     </Properties>
   </Attribute>
