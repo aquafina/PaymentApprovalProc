@@ -8,45 +8,45 @@
    </xs:complexType>
    <xs:complexType name="XxPaymentApprovalData">
       <xs:sequence>
-         <xs:element name="paymentVr" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="invoiceNo" minOccurs="0">
+         <xs:element name="paymentVr" type="xs:decimal" nillable="true"/>
+         <xs:element name="invoiceNo">
             <xs:simpleType>
                <xs:restriction base="xs:string">
                   <xs:maxLength value="50"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
-         <xs:element name="invoiceDate" type="xs:dateTime" minOccurs="0" nillable="true"/>
-         <xs:element name="invoiceAmount" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="advancePaymentApplied" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="grossAmountPaid" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="wht" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="stWithHolding" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="netAmountPaid" type="xs:decimal" minOccurs="0" nillable="true"/>
-         <xs:element name="division" minOccurs="0">
+         <xs:element name="invoiceDate" type="xs:dateTime" nillable="true"/>
+         <xs:element name="invoiceAmount" type="xs:decimal" nillable="true"/>
+         <xs:element name="advancePaymentApplied" type="xs:decimal" nillable="true"/>
+         <xs:element name="grossAmountPaid" type="xs:decimal" nillable="true"/>
+         <xs:element name="wht" type="xs:decimal" nillable="true"/>
+         <xs:element name="stWithHolding" type="xs:decimal" nillable="true"/>
+         <xs:element name="netAmountPaid" type="xs:decimal" nillable="true"/>
+         <xs:element name="division">
             <xs:simpleType>
                <xs:restriction base="xs:string">
                   <xs:maxLength value="240"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
-         <xs:element name="vendorName" minOccurs="0" nillable="true">
+         <xs:element name="vendorName" nillable="true">
             <xs:simpleType>
                <xs:restriction base="xs:string">
                   <xs:maxLength value="240"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
-         <xs:element name="paymentDate" type="xs:dateTime" minOccurs="0"/>
-         <xs:element name="bankName" minOccurs="0" nillable="true">
+         <xs:element name="paymentDate" type="xs:dateTime"/>
+         <xs:element name="bankName" nillable="true">
             <xs:simpleType>
                <xs:restriction base="xs:string">
                   <xs:maxLength value="360"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:element>
-         <xs:element name="checkNo" type="xs:long" minOccurs="0"/>
-         <xs:element name="batchName" minOccurs="0">
+         <xs:element name="checkNo" type="xs:long"/>
+         <xs:element name="batchName">
             <xs:simpleType>
                <xs:restriction base="xs:string">
                   <xs:maxLength value="50"/>
@@ -54,17 +54,17 @@
             </xs:simpleType>
          </xs:element>
          <xs:element name="batchId" type="xs:long"/>
-         <xs:element name="checkId" type="xs:long" minOccurs="0"/>
-         <xs:element name="invoicePaymentId" type="xs:long" minOccurs="0"/>
+         <xs:element name="checkId" type="xs:long"/>
+         <xs:element name="invoicePaymentId" type="xs:long"/>
          <xs:element name="invoiceId" type="xs:long"/>
-         <xs:element name="personId" type="xs:long" minOccurs="0" nillable="true"/>
+         <xs:element name="personId" type="xs:long" nillable="true"/>
       </xs:sequence>
    </xs:complexType>
-   <xs:element name="GetApprovalDataSelect_batch_id_check_idInputParameters" type="GetApprovalDataSelect_batch_id_check_id"/>
-   <xs:complexType name="GetApprovalDataSelect_batch_id_check_id">
+   <xs:element name="GetApprovalDataSelect_check_id_batch_idInputParameters" type="GetApprovalDataSelect_check_id_batch_id"/>
+   <xs:complexType name="GetApprovalDataSelect_check_id_batch_id">
       <xs:sequence>
-         <xs:element name="batch_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
          <xs:element name="check_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="batch_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>

@@ -6,8 +6,26 @@
          <class>GetApprovalData.XxPaymentApprovalData</class>
          <alias>XX_PAYMENT_APPROVAL_DATA</alias>
          <primary-key>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="PAYMENT_VR" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_NO" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_DATE" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_AMOUNT" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="ADVANCE_PAYMENT_APPLIED" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="GROSS_AMOUNT_PAID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="WHT" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="ST_WITH_HOLDING" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="NET_AMOUNT_PAID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="VENDOR_NAME" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="DIVISION" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="PAYMENT_DATE" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="BANK_NAME" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_NO" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_NAME" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_PAYMENT_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="PERSON_ID" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
@@ -15,27 +33,27 @@
                <query name="GetApprovalDataSelect" xsi:type="read-all-query">
                   <criteria operator="or" xsi:type="logic-expression">
                      <left operator="equal" xsi:type="relation-expression">
-                        <left name="batchId" xsi:type="query-key-expression">
-                           <base xsi:type="base-expression"/>
-                        </left>
-                        <right xsi:type="parameter-expression">
-                           <parameter name="batch_id" xsi:type="column"/>
-                        </right>
-                     </left>
-                     <right operator="equal" xsi:type="relation-expression">
                         <left name="checkId" xsi:type="query-key-expression">
                            <base xsi:type="base-expression"/>
                         </left>
                         <right xsi:type="parameter-expression">
                            <parameter name="check_id" xsi:type="column"/>
                         </right>
+                     </left>
+                     <right operator="equal" xsi:type="relation-expression">
+                        <left name="batchId" xsi:type="query-key-expression">
+                           <base xsi:type="base-expression"/>
+                        </left>
+                        <right xsi:type="parameter-expression">
+                           <parameter name="batch_id" xsi:type="column"/>
+                        </right>
                      </right>
                   </criteria>
                   <arguments>
-                     <argument name="batch_id">
+                     <argument name="check_id">
                         <type>java.lang.String</type>
                      </argument>
-                     <argument name="check_id">
+                     <argument name="batch_id">
                         <type>java.lang.String</type>
                      </argument>
                   </arguments>

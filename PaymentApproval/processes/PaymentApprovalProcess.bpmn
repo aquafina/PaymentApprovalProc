@@ -79,10 +79,10 @@
                 </ns5:OracleExtensions>
             </extensionElements>
             <ioSpecification>
-                <dataInput name="getApprovalDataSelectBatchIdCheckIdInputParameters" id="getApprovalDataSelectBatchIdCheckIdInputParameters">
+                <dataInput name="getApprovalDataSelectCheckIdBatchIdInputParameters" id="getApprovalDataSelectCheckIdBatchIdInputParameters">
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" element="GetApprovalDataSelect_batch_id_check_idInputParameters" isArray="false"/>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" element="GetApprovalDataSelect_check_id_batch_idInputParameters" isArray="false"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
                 </dataInput>
@@ -94,7 +94,7 @@
                     </extensionElements>
                 </dataOutput>
                 <inputSet id="ACT15835654226763_uniqueInputSet">
-                    <dataInputRefs>getApprovalDataSelectBatchIdCheckIdInputParameters</dataInputRefs>
+                    <dataInputRefs>getApprovalDataSelectCheckIdBatchIdInputParameters</dataInputRefs>
                 </inputSet>
                 <outputSet id="ACT15835654226763_uniqueOutputSet">
                     <dataOutputRefs>xxPaymentApprovalDataCollection</dataOutputRefs>
@@ -105,7 +105,7 @@
                     <ns5:OracleExtensions/>
                 </extensionElements>
                 <sourceRef>DO_ProcessInputParams</sourceRef>
-                <targetRef>getApprovalDataSelectBatchIdCheckIdInputParameters</targetRef>
+                <targetRef>getApprovalDataSelectCheckIdBatchIdInputParameters</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
@@ -119,7 +119,7 @@
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectBatchIdCheckIdInputParameters')/ns:batch_id
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectCheckIdBatchIdInputParameters')/ns:batch_id
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -140,7 +140,7 @@
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectBatchIdCheckIdInputParameters')/ns:check_id
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('getApprovalDataSelectCheckIdBatchIdInputParameters')/ns:check_id
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
