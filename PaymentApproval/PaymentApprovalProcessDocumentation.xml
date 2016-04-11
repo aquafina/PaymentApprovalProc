@@ -42,7 +42,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15860558202230">
                 <labels>
-                    <label locale="en">dummy</label>
+                    <label locale="en">LOG_ERROR</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -58,7 +58,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15860866679277">
                 <labels>
-                    <label locale="en">ASSIGN_LEAF</label>
+                    <label locale="en">INIT_APPROVER_ROOT</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -66,7 +66,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT15860952496327">
                 <labels>
-                    <label locale="en">CURRENT_APPROVER</label>
+                    <label locale="en">ASSIGN_CURRENT_APPROVER</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -130,7 +130,7 @@
             <topicDocumentation name="sf6"/>
             <topicDocumentation name="sf11">
                 <labels>
-                    <label locale="en">Yes</label>
+                    <label locale="en">Proceed</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -162,7 +162,11 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf28"/>
-            <topicDocumentation name="sf29"/>
+            <topicDocumentation name="sf29">
+                <labels>
+                    <label locale="en"/>
+                </labels>
+            </topicDocumentation>
             <topicDocumentation name="sf31">
                 <labels>
                     <label locale="en">Must Be Zero</label>
@@ -206,7 +210,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf40">
                 <labels>
-                    <label locale="en">No Approver Found</label>
+                    <label locale="en">Hierarchy Consumed</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -214,7 +218,7 @@
             </topicDocumentation>
             <topicDocumentation name="sf42">
                 <labels>
-                    <label locale="en">Hierarchy Consumed</label>
+                    <label locale="en">No Approval Found</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
