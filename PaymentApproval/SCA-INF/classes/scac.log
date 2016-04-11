@@ -1,24 +1,24 @@
-Apr 11, 2016 5:37:03 PM oracle.mds
+Apr 11, 2016 5:42:02 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Apr 11, 2016 5:37:03 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Apr 11, 2016 5:42:03 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Apr 11, 2016 5:37:03 PM oracle.mds
+Apr 11, 2016 5:42:03 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Apr 11, 2016 5:37:04 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Apr 11, 2016 5:42:03 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Apr 11, 2016 5:37:09 PM com.collaxa.cube.CubeLogger info
+Apr 11, 2016 5:42:12 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_UpdateFlags.bpel" ...
-Apr 11, 2016 5:37:09 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Apr 11, 2016 5:42:12 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 11, 2016 5:37:09 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Apr 11, 2016 5:42:12 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 11, 2016 5:37:10 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_UpdateFlags" in 57.7 milliseconds [nodes 7=0+7, 121.3 nodes/sec]
-Apr 11, 2016 5:37:15 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_UpdateFlags" in 4.906 seconds
-Apr 11, 2016 5:37:15 PM com.collaxa.cube.CubeLogger info
+Apr 11, 2016 5:42:13 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_UpdateFlags" in 79.3 milliseconds [nodes 7=0+7, 88.3 nodes/sec]
+Apr 11, 2016 5:42:20 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_UpdateFlags" in 6.948 seconds
+Apr 11, 2016 5:42:20 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 1.7 milliseconds
 
-Apr 11, 2016 5:37:15 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_UpdateFlags" in 14.8 milliseconds
+Apr 11, 2016 5:42:20 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_UpdateFlags" in 15.5 milliseconds
 
