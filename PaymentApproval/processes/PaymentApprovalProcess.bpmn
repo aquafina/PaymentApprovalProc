@@ -374,6 +374,7 @@
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
+                        <ns5:StringFeature value="" name="reinitiateSource"/>
                     </ns5:FeatureSet>
                     <ns5:HumanTask humanTaskReference="HumanTasks.APPROVE_PAYMENT_DOCUMENT"/>
                     <ns5:LogHandlers/>
@@ -1175,6 +1176,7 @@
                     <ns5:OracleExtensions/>
                 </extensionElements>
                 <sourceRef>DO_ProcessInputParams</sourceRef>
+                <sourceRef>DO_CurrentApprover</sourceRef>
                 <sourceRef>DO_Comment</sourceRef>
                 <targetRef>xxPaymentApprovalCommentsCollection</targetRef>
                 <assignment>
@@ -1191,27 +1193,6 @@
                         </extensionElements>
                     </from>
                     <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element1
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element10
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element10
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -1254,6 +1235,27 @@
                         </extensionElements>
                     </from>
                     <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element3
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_CurrentApprover')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element10
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
