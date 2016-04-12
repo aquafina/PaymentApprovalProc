@@ -25,6 +25,8 @@
           location="UpdateFlags.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags"
           location="BP_UpdateFlags.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover"
+          location="SaveApprover.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -86,6 +88,17 @@
   <reference name="UpdateFlags" ui:wsdlLocation="UpdateFlags.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/UpdateFlags#wsdl.interface(UpdateFlags_ptt)"/>
     <binding.jca config="UpdateFlags_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
+  <reference name="SaveApprover" ui:wsdlLocation="SaveApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover#wsdl.interface(SaveApprover_ptt)"/>
+    <binding.jca config="SaveApprover_db.jca"/>
     <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
     <property name="jca.retry.interval" type="xs:int" many="false"
               override="may">1</property>

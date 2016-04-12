@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApprover" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveApprover" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxPaymentApprovalHistoryCollection" type="XxPaymentApprovalHistoryCollection"/>
+   <xs:complexType name="XxPaymentApprovalHistoryCollection">
+      <xs:sequence>
+         <xs:element name="XxPaymentApprovalHistory" type="XxPaymentApprovalHistory" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxPaymentApprovalHistory">
+      <xs:sequence>
+         <xs:element name="historyId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="checkId" type="xs:decimal" nillable="true"/>
+         <xs:element name="approverId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="theTime" type="xs:dateTime" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
