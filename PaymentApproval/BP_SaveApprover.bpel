@@ -3,7 +3,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   Oracle JDeveloper BPEL Designer 
   
-  Created: Tue Apr 12 11:46:07 PKT 2016
+  Created: Tue Apr 12 11:57:04 PKT 2016
   Author:  kaka
   Type: BPEL 1.1 Process
   Purpose: Synchronous BPEL Process
@@ -15,7 +15,8 @@
                xmlns:client="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover"
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
-         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/">
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover">
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -29,7 +30,9 @@
       used for callback. The location and correlation information associated
       with the client role are automatically set using WS-Addressing.
     -->
-    <partnerLink name="saveapprover_client" partnerLinkType="client:BP_SaveApprover" myRole="BP_SaveApproverProvider"/>
+    <partnerLink name="saveapprover_clientws" partnerLinkType="client:BP_SaveApprover" myRole="BP_SaveApproverProvider"/>
+    <partnerLink name="SaveApprover" partnerLinkType="ns1:SaveApprover_plt"
+                 partnerRole="SaveApprover_role"/>
   </partnerLinks>
 
   <!-- 
@@ -56,9 +59,9 @@
   <sequence name="main">
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in BP_SaveApprover.wsdl) -->
-    <receive name="receiveInput" partnerLink="saveapprover_client" portType="client:BP_SaveApprover" operation="process" variable="inputVariable" createInstance="yes"/>
+    <receive name="receiveInput" partnerLink="saveapprover_clientws" portType="client:BP_SaveApprover" operation="process" variable="inputVariable" createInstance="yes"/>
 
     <!-- Generate reply to synchronous request -->
-    <reply name="replyOutput" partnerLink="saveapprover_client" portType="client:BP_SaveApprover" operation="process" variable="outputVariable"/>
+    <reply name="replyOutput" partnerLink="saveapprover_clientws" portType="client:BP_SaveApprover" operation="process" variable="outputVariable"/>
   </sequence>
 </process>

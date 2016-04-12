@@ -6,7 +6,7 @@
       <xs:sequence>
          <xs:element name="XxPaymentApprovalData"
                      type="XxPaymentApprovalData_copy_1" minOccurs="0" maxOccurs="unbounded"/>
-         <xs:element name="outcome" type="xs:string"/>
+         <xs:element name="approver" type="xs:string"/>
       </xs:sequence>
    </xs:complexType>
    <xs:complexType name="XxPaymentApprovalData_copy_1">

@@ -2,13 +2,13 @@
 <Faults>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:component[@name='BP_SaveApprover/saveapprover_client']</loc>
+      <loc>/ns:composite/ns:component[@name='BP_SaveApprover/saveapprover_clientws']</loc>
       <line/>
       <col/>
       <file>E:\Development Workspace\BPM\PaymentApprovalProc\PaymentApproval\composite.xml</file>
       <name>E:\Development Workspace\BPM\PaymentApprovalProc\PaymentApproval\composite.xml</name>
       <fix/>
-      <msg>The service "saveapprover_client" exposed by component "BP_SaveApprover" is not wired to/used by any other component.</msg>
+      <msg>The service "saveapprover_clientws" exposed by component "BP_SaveApprover" is not wired to/used by any other component.</msg>
    </Fault>
    <Fault>
       <severity>warning</severity>
