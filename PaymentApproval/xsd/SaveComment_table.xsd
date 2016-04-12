@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxPaymentApprovalCommentsCollection" type="XxPaymentApprovalCommentsCollection"/>
+   <xs:complexType name="XxPaymentApprovalCommentsCollection">
+      <xs:sequence>
+         <xs:element name="XxPaymentApprovalComments" type="XxPaymentApprovalComments" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxPaymentApprovalComments">
+      <xs:sequence>
+         <xs:element name="commentId" type="xs:decimal" nillable="true"/>
+         <xs:element name="commentText" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="2000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element1" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element2" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element3" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element4" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element5" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element6" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element7" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element8" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element9" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="element10" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="20"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

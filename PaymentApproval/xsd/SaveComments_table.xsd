@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComments" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComments" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxPaymentApprovalCommentsCollection" type="XxPaymentApprovalCommentsCollection"/>
+   <xs:complexType name="XxPaymentApprovalCommentsCollection">
+      <xs:sequence>
+         <xs:element name="XxPaymentApprovalComments" type="XxPaymentApprovalComments" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxPaymentApprovalComments">
+      <xs:sequence>
+         <xs:element name="commentId" type="xs:decimal" nillable="true"/>
+         <xs:element name="commentText" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="2000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="parameter" type="xs:string" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

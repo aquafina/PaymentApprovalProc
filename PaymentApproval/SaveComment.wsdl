@@ -1,0 +1,21 @@
+<?binding.jca SaveComment_db.jca?>
+<wsdl:definitions name="SaveComment" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment">
+    <plt:partnerLinkType name="SaveComment_plt">
+        <plt:role name="SaveComment_role">
+            <plt:portType name="tns:SaveComment_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" schemaLocation="xsd/SaveComment_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="XxPaymentApprovalCommentsCollection_msg">
+        <wsdl:part name="XxPaymentApprovalCommentsCollection" element="top:XxPaymentApprovalCommentsCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="SaveComment_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:XxPaymentApprovalCommentsCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

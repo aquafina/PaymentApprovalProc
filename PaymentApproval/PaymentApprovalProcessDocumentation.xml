@@ -104,6 +104,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15885274419732">
+                <labels>
+                    <label locale="en">SAVE_APPROVER_TASK</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -157,9 +165,9 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT15885274419732">
+            <topicDocumentation name="ACT15886871888934">
                 <labels>
-                    <label locale="en">SAVE_APPROVER_TASK</label>
+                    <label locale="en">SAVE_COMMENT</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -271,6 +279,7 @@
             <topicDocumentation name="sf41"/>
             <topicDocumentation name="sf93"/>
             <topicDocumentation name="sf65"/>
+            <topicDocumentation name="sf45"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

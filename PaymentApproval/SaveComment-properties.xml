@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">XX_PAYMENT_APPROVAL_COMMENTS</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT7:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_8">ELEMENT7</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_7">ELEMENT6</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT10:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_6">ELEMENT5</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_5">ELEMENT4</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_4">ELEMENT3</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT2:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_3">ELEMENT2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_2">ELEMENT1</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT6:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_1">COMMENT_TEXT</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT1:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_0">COMMENT_ID</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_ID:db_column_precision">0</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT4:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT5:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_11">ELEMENT10</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_10">ELEMENT9</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT4:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT3:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT3:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT10:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT2:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT1:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT2:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_ID:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT1:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_TEXT:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT9:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_table_type">TABLE</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT8:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_TEXT:db_column_size">2000</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT7:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT9:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT8:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT7:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT10:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT6:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT6:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT5:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT9:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT4:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT8:db_column_size">20</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.COMMENT_TEXT:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT5:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS.ELEMENT3:db_column_type">VARCHAR2</entry>
+   <entry key="XX_PAYMENT_APPROVAL_COMMENTS:db_column_9">ELEMENT8</entry>
+</properties>

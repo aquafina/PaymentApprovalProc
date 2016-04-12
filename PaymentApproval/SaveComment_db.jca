@@ -1,0 +1,15 @@
+<adapter-config name="SaveComment" adapter="Database Adapter" wsdlLocation="SaveComment.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="SaveComment_ptt" operation="merge">
+    <interaction-spec className="oracle.tip.adapter.db.DBWriteInteractionSpec">
+      <property name="DescriptorName" value="SaveComment.XxPaymentApprovalComments"/>
+      <property name="DmlType" value="merge"/>
+      <property name="MappingsMetaDataURL" value="SaveComment-or-mappings.xml"/>
+      <property name="OptimizeMerge" value="true"/>
+      <property name="DetectOmissions" value="true"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
