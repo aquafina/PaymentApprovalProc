@@ -16,7 +16,8 @@
                xmlns:ora="http://schemas.oracle.com/xpath/extension"
                xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
          xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
-         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover">
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover"
+         xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
 
     <!-- 
       ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,6 +48,8 @@
 
     <!-- Reference to the message that will be returned to the requester-->
     <variable name="outputVariable" messageType="client:BP_SaveApproverResponseMessage"/>
+    <variable name="Invoke_SaveApprover_merge_InputVariable"
+              messageType="ns1:XxPaymentApprovalHistoryCollection_msg"/>
   </variables>
 
   <!-- 
@@ -60,7 +63,20 @@
 
     <!-- Receive input from requestor. (Note: This maps to operation defined in BP_SaveApprover.wsdl) -->
     <receive name="receiveInput" partnerLink="saveapprover_clientws" portType="client:BP_SaveApprover" operation="process" variable="inputVariable" createInstance="yes"/>
-
+    <assign name="Transform1">
+      <bpelx:annotation>
+        <bpelx:pattern>transformation</bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_3.xsl', $inputVariable.payload)"/>
+        <to variable="Invoke_SaveApprover_merge_InputVariable"
+            part="XxPaymentApprovalHistoryCollection"/>
+      </copy>
+    </assign>
+    <invoke name="Invoke_SaveApprover"
+            inputVariable="Invoke_SaveApprover_merge_InputVariable"
+            partnerLink="SaveApprover" portType="ns1:SaveApprover_ptt"
+            operation="merge" bpelx:invokeAsDetail="no"/>
     <!-- Generate reply to synchronous request -->
     <reply name="replyOutput" partnerLink="saveapprover_clientws" portType="client:BP_SaveApprover" operation="process" variable="outputVariable"/>
   </sequence>

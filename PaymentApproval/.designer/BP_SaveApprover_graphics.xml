@@ -4,10 +4,10 @@
    <annotationfile/>
    <iconize/>
    <partnerlink_locations>
-      <partnerlink name="saveapprover_clientws" x="0" y="139" side="left"/>
-      <partnerlink name="SaveApprover" x="923" y="30" side="right"/>
+      <partnerlink name="saveapprover_clientws" x="0" y="231" side="left"/>
+      <partnerlink name="SaveApprover" x="909" y="278" side="right"/>
    </partnerlink_locations>
-   <graph_layout viewport="0,0,1039,480" show_swimlanes="true">
+   <graph_layout viewport="0,0,1025,480" show_swimlanes="true">
       <layout_item collapsed="false" xpath="/process" type="process" showhandlers="true"/>
       <layout_item collapsed="false" xpath="/process/sequence" type="sequence"/>
    </graph_layout>
