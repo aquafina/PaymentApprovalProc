@@ -30,4 +30,8 @@
              ui:wsdlLocation="BP_UpdateFlags.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags#wsdl.interface(BP_UpdateFlags)"/>
   </reference>
+  <reference name="Services.BPEL.BP_SaveApprover.Saveapprover_clientws.reference"
+             ui:wsdlLocation="BP_SaveApprover.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover#wsdl.interface(BP_SaveApprover)"/>
+  </reference>
 </componentType>

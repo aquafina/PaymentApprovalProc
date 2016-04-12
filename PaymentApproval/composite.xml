@@ -147,4 +147,8 @@
     <source.uri>BP_SaveApprover/SaveApprover</source.uri>
     <target.uri>SaveApprover</target.uri>
   </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.BPEL.BP_SaveApprover.Saveapprover_clientws.reference</source.uri>
+    <target.uri>BP_SaveApprover/saveapprover_clientws</target.uri>
+  </wire>
 </composite>
