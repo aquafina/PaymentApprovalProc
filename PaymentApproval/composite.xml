@@ -27,6 +27,8 @@
           location="BP_UpdateFlags.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveApprover"
           location="SaveApprover.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover"
+          location="BP_SaveApprover.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -48,6 +50,12 @@
   </component>
   <component name="BP_UpdateFlags" version="1.1">
     <implementation.bpel src="BP_UpdateFlags.bpel"/>
+    <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BP_SaveApprover" version="1.1">
+    <implementation.bpel src="BP_SaveApprover.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
@@ -134,5 +142,9 @@
   <wire>
     <source.uri>PaymentApprovalProcess/Services.BPEL.BP_UpdateFlags.The_client_update_flag_bpfel.reference</source.uri>
     <target.uri>BP_UpdateFlags/the_client_update_flag_bpfel</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BP_SaveApprover/SaveApprover</source.uri>
+    <target.uri>SaveApprover</target.uri>
   </wire>
 </composite>

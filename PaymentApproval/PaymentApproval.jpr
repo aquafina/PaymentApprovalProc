@@ -1,5 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jpr:project xmlns:jpr="http://xmlns.oracle.com/ide/project">
+   <value n="BP_SaveApprover_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover"/>
+   <value n="BP_SaveApprover_ProcessName" v="BP_SaveApprover"/>
+   <value n="BP_SaveApprover_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BP_SaveApprover_wsdl" v="BP_SaveApprover.wsdl"/>
    <url n="BP_UpdateFlags_bpelFileURL" path="BP_UpdateFlags.bpel"/>
    <value n="BP_UpdateFlags_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags"/>
    <value n="BP_UpdateFlags_ProcessName" v="BP_UpdateFlags"/>
@@ -70,7 +74,7 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -391,6 +395,6 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BP_UpdateFlags"/>
+   <value n="ProcessName" v="BP_SaveApprover"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>
