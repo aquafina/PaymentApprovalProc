@@ -120,6 +120,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15893881539162">
+                <labels>
+                    <label locale="en">GET_ACCOUNTING_EVENT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -168,14 +176,6 @@
             <topicDocumentation name="GTW15860776371212">
                 <labels>
                     <label locale="en">EXIT_STATUS</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT15893881539162">
-                <labels>
-                    <label locale="en">GET_ACCOUNTING_EVENT</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
