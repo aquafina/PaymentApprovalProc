@@ -173,6 +173,22 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT15893881539162">
+                <labels>
+                    <label locale="en">GET_ACCOUNTING_EVENT</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15893892454598">
+                <labels>
+                    <label locale="en">IS_DRAFTED</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="sf53"/>
             <topicDocumentation name="sf5"/>
             <topicDocumentation name="sf6"/>
@@ -280,6 +296,16 @@
             <topicDocumentation name="sf93"/>
             <topicDocumentation name="sf65"/>
             <topicDocumentation name="sf45"/>
+            <topicDocumentation name="sf85"/>
+            <topicDocumentation name="sf86">
+                <labels>
+                    <label locale="en"></label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf89"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

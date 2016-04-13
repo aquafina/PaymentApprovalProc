@@ -31,6 +31,8 @@
           location="BP_SaveApprover.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment"
           location="SaveComment.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/IsDrafted"
+          location="IsDrafted.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -128,6 +130,17 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="IsDrafted" ui:wsdlLocation="IsDrafted.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/IsDrafted#wsdl.interface(IsDrafted_ptt)"/>
+    <binding.jca config="IsDrafted_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>Client_PaymentApprovalProcess</source.uri>
     <target.uri>PaymentApprovalProcess/References.Externals.Client_PaymentApprovalProcess.service</target.uri>
@@ -167,5 +180,9 @@
   <wire>
     <source.uri>PaymentApprovalProcess/Services.Externals.SaveComment.reference</source.uri>
     <target.uri>SaveComment</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.Externals.IsDrafted.reference</source.uri>
+    <target.uri>IsDrafted</target.uri>
   </wire>
 </composite>

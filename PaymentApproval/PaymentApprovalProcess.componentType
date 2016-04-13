@@ -38,4 +38,8 @@
              ui:wsdlLocation="SaveComment.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment#wsdl.interface(SaveComment_ptt)"/>
   </reference>
+  <reference name="Services.Externals.IsDrafted.reference"
+             ui:wsdlLocation="IsDrafted.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/IsDrafted#wsdl.interface(IsDrafted_ptt)"/>
+  </reference>
 </componentType>

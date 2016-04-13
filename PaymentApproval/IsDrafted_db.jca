@@ -1,0 +1,14 @@
+<adapter-config name="IsDrafted" adapter="Database Adapter" wsdlLocation="IsDrafted.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="IsDrafted_ptt" operation="IsDrafted">
+    <interaction-spec className="oracle.tip.adapter.db.DBStoredProcedureInteractionSpec">
+      <property name="SchemaName" value="APPS"/>
+      <property name="PackageName" value="PROC_PAYMENT"/>
+      <property name="ProcedureName" value="ISDRAFTED"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+    <output/>
+  </endpoint-interaction>
+
+</adapter-config>
