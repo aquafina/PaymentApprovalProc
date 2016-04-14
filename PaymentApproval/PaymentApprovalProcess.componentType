@@ -34,12 +34,12 @@
              ui:wsdlLocation="BP_SaveApprover.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover#wsdl.interface(BP_SaveApprover)"/>
   </reference>
-  <reference name="Services.Externals.SaveComment.reference"
-             ui:wsdlLocation="SaveComment.wsdl">
-    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment#wsdl.interface(SaveComment_ptt)"/>
-  </reference>
   <reference name="Services.Externals.IsDrafted.reference"
              ui:wsdlLocation="IsDrafted.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/IsDrafted#wsdl.interface(IsDrafted_ptt)"/>
+  </reference>
+  <reference name="Services.BPEL.BP_SaveUserComments.Bp_saveusercomments_client.reference"
+             ui:wsdlLocation="BP_SaveUserComments.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments#wsdl.interface(BP_SaveUserComments)"/>
   </reference>
 </componentType>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<xsd:schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="1.0" elementFormDefault="qualified" blockDefault="#all">
+  
+  <simpleType name="identityTypeEnum">
+      <restriction base="xsd:string">
+        <enumeration value="user"/>
+        <enumeration value="group"/>
+        <enumeration value="application_role"/>
+        <enumeration value="position"/>
+      </restriction>
+    </simpleType>
+    <complexType name="commentType">
+      <sequence>
+        <element name="comment" type="xsd:string" minOccurs="0"/>
+        <element name="updatedBy" type="tns:identityType" minOccurs="0"/>
+        <element name="updatedDate" type="xsd:dateTime" minOccurs="0"/>
+        <element name="displayNameLanguage" type="xsd:string" minOccurs="0"/>
+        <element name="action" type="xsd:string" minOccurs="0"/>
+        <element name="systemVersionFlag" type="xsd:string" minOccurs="0"/>
+        <element name="acl" type="xsd:string" minOccurs="0"/>
+        <element name="doesBelongToParent" type="xsd:boolean" minOccurs="0"/>
+        <element name="isSystemComment" type="xsd:boolean" minOccurs="0"/>
+        <element name="taskId" type="xsd:string" minOccurs="0"/>
+        <element name="commentScope" type="tns:scopeTypeEnum" minOccurs="0"/>
+        <element name="id" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        <element name="operation" type="tns:operationTypeEnum" minOccurs="0" maxOccurs="1"/>
+      </sequence>
+    </complexType>
+    <complexType name="identityType">
+      <sequence>
+        <element name="id" type="xsd:string" minOccurs="0"/>
+        <element name="displayName" type="xsd:string" minOccurs="0"/>
+        <element name="type" type="tns:identityTypeEnum" minOccurs="0"/>
+        <element name="systemVersionFlag" type="xsd:string" minOccurs="0"/>
+      </sequence>
+    </complexType>
+    <simpleType name="scopeTypeEnum">
+      <restriction base="xsd:string">
+        <enumeration value="TASK"/>
+        <enumeration value="PARENT_TASK"/>
+        <enumeration value="BPM"/>
+        <enumeration value="CASE"/>
+      </restriction>
+    </simpleType>
+     <simpleType name="operationTypeEnum">
+      <restriction base="xsd:string">
+        <enumeration value="ADD"/>
+        <enumeration value="UPDATE"/>
+        <enumeration value="DELETE"/>
+      </restriction>
+    </simpleType>
+<element name="task_1">
+      <complexType>
+        <sequence>
+          <element name="userComment" type="tns:commentType" minOccurs="0" maxOccurs="unbounded"/>
+        <element name="approver" type="string"/>
+        <element name="element1" type="string"/>
+        <element name="element2" type="string"/>
+      </sequence>
+      </complexType>
+    </element>
+</xsd:schema>

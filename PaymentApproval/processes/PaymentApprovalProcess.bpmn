@@ -37,11 +37,11 @@
                     <ns5:Conversation id="CONVERSATION158852761361" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_SaveApprover.Saveapprover_clientws"/>
                     </ns5:Conversation>
-                    <ns5:Conversation id="CONVERSATION158868408031" type="service_call">
-                        <ns5:ServiceCallConversationDefinition service="Services.Externals.SaveComment"/>
-                    </ns5:Conversation>
                     <ns5:Conversation id="CONVERSATION158938839309" type="service_call">
                         <ns5:ServiceCallConversationDefinition service="Services.Externals.IsDrafted"/>
+                    </ns5:Conversation>
+                    <ns5:Conversation id="CONVERSATION159031536559" type="service_call">
+                        <ns5:ServiceCallConversationDefinition service="Services.BPEL.BP_SaveUserComments.Bp_saveusercomments_client"/>
                     </ns5:Conversation>
                 </ns5:Conversations>
                 <ns5:ApplicationInfo>
@@ -59,7 +59,7 @@
                     <ns5:OracleExtensions>
                         <ns5:GraphicsAttributes backgroundColor="-1761607681">
                             <ns5:Position x="0" y="0"/>
-                            <ns5:Size width="662" height="0"/>
+                            <ns5:Size width="751" height="0"/>
                         </ns5:GraphicsAttributes>
                         <ns5:LaneAttributes roleId="Role"/>
                         <ns5:FeatureSet/>
@@ -71,7 +71,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="642" y="149"/>
+                        <ns5:Position x="658" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -191,7 +191,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="504" y="149"/>
+                        <ns5:Position x="520" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -265,7 +265,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1082" y="149"/>
+                        <ns5:Position x="1098" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -364,7 +364,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1706" y="149"/>
+                        <ns5:Position x="1722" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -377,7 +377,6 @@
                         <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
                         <ns5:StringFeature value="REUSE_PAYLOAD" name="reinitiatorPolicy"/>
                         <ns5:StringFeature value="SIMPLE" name="humanTaskType"/>
-                        <ns5:StringFeature value="" name="reinitiateSource"/>
                     </ns5:FeatureSet>
                     <ns5:HumanTask humanTaskReference="HumanTasks.APPROVE_PAYMENT_DOCUMENT"/>
                     <ns5:LogHandlers/>
@@ -515,24 +514,90 @@
             </dataOutputAssociation>
             <dataOutputAssociation>
                 <extensionElements>
-                    <ns5:OracleExtensions/>
+                    <ns5:OracleExtensions>
+                        <ns5:OtherRef>DO_ProcessInputParams</ns5:OtherRef>
+                        <ns5:OtherRef>DO_CurrentApprover</ns5:OtherRef>
+                    </ns5:OracleExtensions>
                 </extensionElements>
                 <sourceRef>execData</sourceRef>
-                <targetRef>DO_Comment</targetRef>
+                <targetRef>DO_USERCOMMENTS</targetRef>
                 <assignment>
                     <extensionElements>
                         <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
+                            <ns5:DataAssignment operation="copy_list"/>
                         </ns5:OracleExtensions>
                     </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('execData')/ns:userComment[1]/ns:comment
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataOutput('execData')/ns:userComment
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
                             </ns5:OracleExtensions>
                         </extensionElements>
                     </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Comment')
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_USERCOMMENTS')/ns:userComment
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element1
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_USERCOMMENTS')/ns:element1
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element2
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_USERCOMMENTS')/ns:element2
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_CurrentApprover')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_USERCOMMENTS')/ns:approver
                         <extensionElements>
                             <ns5:OracleExtensions>
                                 <ns5:Expression mode="simple"/>
@@ -547,7 +612,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1558" y="462"/>
+                        <ns5:Position x="1574" y="551"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -597,7 +662,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="2200" y="149"/>
+                        <ns5:Position x="2372" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -617,7 +682,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="922" y="149"/>
+                        <ns5:Position x="938" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -666,7 +731,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1382" y="149"/>
+                        <ns5:Position x="1398" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -715,7 +780,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1706" y="462"/>
+                        <ns5:Position x="1722" y="551"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -818,7 +883,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1382" y="582"/>
+                        <ns5:Position x="1398" y="671"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -868,7 +933,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="2320" y="149"/>
+                        <ns5:Position x="2492" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -961,7 +1026,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1558" y="149"/>
+                        <ns5:Position x="1574" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1053,7 +1118,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="2462" y="149"/>
+                        <ns5:Position x="2634" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1142,305 +1207,11 @@
                 </assignment>
             </dataInputAssociation>
         </serviceTask>
-        <serviceTask implementation="Services.Externals.SaveComment" operationRef="merge" isForCompensation="false" name="SAVE_COMMENT" id="ACT15886871888934">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:GraphicsAttributes>
-                        <ns5:Position x="1840" y="149"/>
-                    </ns5:GraphicsAttributes>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="isDraft"/>
-                        <ns5:BooleanFeature value="false" name="inputValidation"/>
-                        <ns5:BooleanFeature value="false" name="outputValidation"/>
-                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <ns5:StringFeature value="Begin Level" name="level"/>
-                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
-                    </ns5:FeatureSet>
-                    <ns5:Conversational conversation="CONVERSATION158868408031">
-                        <ns5:ServiceCallConversationalDefinition operation="merge"/>
-                    </ns5:Conversational>
-                    <ns5:LogHandlers/>
-                </ns5:OracleExtensions>
-            </extensionElements>
-            <ioSpecification>
-                <dataInput name="xxPaymentApprovalCommentsCollection" id="xxPaymentApprovalCommentsCollection">
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:TypeRef namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" element="XxPaymentApprovalCommentsCollection" isArray="false"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                </dataInput>
-                <inputSet id="ACT15886871888934_uniqueInputSet">
-                    <dataInputRefs>xxPaymentApprovalCommentsCollection</dataInputRefs>
-                </inputSet>
-            </ioSpecification>
-            <dataInputAssociation>
-                <extensionElements>
-                    <ns5:OracleExtensions/>
-                </extensionElements>
-                <sourceRef>DO_ProcessInputParams</sourceRef>
-                <sourceRef>DO_CurrentApprover</sourceRef>
-                <sourceRef>DO_Comment</sourceRef>
-                <targetRef>xxPaymentApprovalCommentsCollection</targetRef>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element1
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element1
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element2
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element2
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element3
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element3
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_CurrentApprover')
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element10
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element4
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element4
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element5
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element5
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element6
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element6
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element7
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element7
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element8
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element8
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://www.example.org" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_ProcessInputParams')/ns:element9
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:element9
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_Comment')
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:commentText
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-                <assignment>
-                    <extensionElements>
-                        <ns5:OracleExtensions>
-                            <ns5:DataAssignment operation="copy"/>
-                        </ns5:OracleExtensions>
-                    </extensionElements>
-                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">oraext:sequence-next-val("xx_approval_comments_Seq","jdbc:oracle:thin:apps/mskiz145@192.168.0.80:1527:erptest")
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="xpath"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </from>
-                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/pcbpel/adapter/db/top/SaveComment" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('xxPaymentApprovalCommentsCollection')/ns:XxPaymentApprovalComments[1]/ns:commentId
-                        <extensionElements>
-                            <ns5:OracleExtensions>
-                                <ns5:Expression mode="simple"/>
-                            </ns5:OracleExtensions>
-                        </extensionElements>
-                    </to>
-                </assignment>
-            </dataInputAssociation>
-        </serviceTask>
         <serviceTask implementation="Services.Externals.IsDrafted" operationRef="isDrafted" isForCompensation="false" name="GET_ACCOUNTING_EVENT" id="ACT15893881539162">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="253" y="147"/>
+                        <ns5:Position x="250" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="isDraft"/>
@@ -1556,11 +1327,82 @@
                 </assignment>
             </dataOutputAssociation>
         </serviceTask>
+        <serviceTask implementation="Services.BPEL.BP_SaveUserComments.Bp_saveusercomments_client" operationRef="process" isForCompensation="false" name="SAVEUSER_COMMENTS" id="ACT15903151841773">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1996" y="170"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="isDraft"/>
+                        <ns5:BooleanFeature value="false" name="inputValidation"/>
+                        <ns5:BooleanFeature value="false" name="outputValidation"/>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                    <ns5:Conversational conversation="CONVERSATION159031536559">
+                        <ns5:ServiceCallConversationalDefinition operation="process"/>
+                    </ns5:Conversational>
+                    <ns5:LogHandlers/>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <ioSpecification>
+                <dataInput name="task1" id="task1">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task_1" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataInput>
+                <dataOutput name="processResponse" id="processResponse">
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:TypeRef namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments" element="processResponse" isArray="false"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                </dataOutput>
+                <inputSet id="ACT15903151841773_uniqueInputSet">
+                    <dataInputRefs>task1</dataInputRefs>
+                </inputSet>
+                <outputSet id="ACT15903151841773_uniqueOutputSet">
+                    <dataOutputRefs>processResponse</dataOutputRefs>
+                </outputSet>
+            </ioSpecification>
+            <dataInputAssociation>
+                <extensionElements>
+                    <ns5:OracleExtensions/>
+                </extensionElements>
+                <sourceRef>DO_USERCOMMENTS</sourceRef>
+                <targetRef>task1</targetRef>
+                <assignment>
+                    <extensionElements>
+                        <ns5:OracleExtensions>
+                            <ns5:DataAssignment operation="copy"/>
+                        </ns5:OracleExtensions>
+                    </extensionElements>
+                    <from xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('DO_USERCOMMENTS')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </from>
+                    <to xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataInput('task1')
+                        <extensionElements>
+                            <ns5:OracleExtensions>
+                                <ns5:Expression mode="simple"/>
+                            </ns5:OracleExtensions>
+                        </extensionElements>
+                    </to>
+                </assignment>
+            </dataInputAssociation>
+        </serviceTask>
         <startEvent isInterrupting="false" name="Start" id="EVT15834051903054">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="100" y="149"/>
+                        <ns5:Position x="100" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="catchAllErrors"/>
@@ -1623,7 +1465,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="2604" y="149"/>
+                        <ns5:Position x="2776" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="inputValidation"/>
@@ -1640,7 +1482,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="780" y="149"/>
+                        <ns5:Position x="796" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1654,7 +1496,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1220" y="149"/>
+                        <ns5:Position x="1236" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1668,7 +1510,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1960" y="149"/>
+                        <ns5:Position x="2132" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1682,7 +1524,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="2080" y="149"/>
+                        <ns5:Position x="2252" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1696,7 +1538,7 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="1382" y="462"/>
+                        <ns5:Position x="1398" y="551"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1710,7 +1552,21 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:GraphicsAttributes>
-                        <ns5:Position x="384" y="149"/>
+                        <ns5:Position x="400" y="169"/>
+                    </ns5:GraphicsAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <ns5:StringFeature value="Begin Level" name="level"/>
+                        <ns5:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </exclusiveGateway>
+        <exclusiveGateway gatewayDirection="Unspecified" name="HAS_COMMENTS" id="GTW15903173140840">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:GraphicsAttributes>
+                        <ns5:Position x="1856" y="169"/>
                     </ns5:GraphicsAttributes>
                     <ns5:FeatureSet>
                         <ns5:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
@@ -1793,11 +1649,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1692" y="331"/>
+                        <ns5:Positions x="1786" y="364"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1692,331" name="curve"/>
+                        <ns5:StringFeature value="1786,364" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="No" name="userName"/>
                     </ns5:FeatureSet>
@@ -1846,7 +1702,7 @@
                 </extensionElements>
             </conditionExpression>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT15860449772470" targetRef="ACT15886871888934" name="sf28" id="sf28">
+        <sequenceFlow sourceRef="ACT15860449772470" targetRef="GTW15903173140840" name="sf28" id="sf28">
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes/>
@@ -1921,11 +1777,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1581" y="36"/>
+                        <ns5:Positions x="1675" y="43"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1581,36" name="curve"/>
+                        <ns5:StringFeature value="1675,43" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="Multilevel" name="userName"/>
                         <ns5:IntegerFeature value="0" name="order"/>
@@ -1956,11 +1812,11 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="2140" y="209"/>
+                        <ns5:Positions x="2312" y="229"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="2140,209" name="curve"/>
+                        <ns5:StringFeature value="2312,229" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                         <ns5:StringFeature value="Rejects" name="userName"/>
                     </ns5:FeatureSet>
@@ -2085,18 +1941,6 @@
                 </ns5:OracleExtensions>
             </extensionElements>
         </sequenceFlow>
-        <sequenceFlow sourceRef="ACT15886871888934" targetRef="GTW15860728593215" name="sf45" id="sf45">
-            <extensionElements>
-                <ns5:OracleExtensions>
-                    <ns5:SequenceFlowAttributes/>
-                    <ns5:FeatureSet>
-                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
-                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
-                    </ns5:FeatureSet>
-                </ns5:OracleExtensions>
-            </extensionElements>
-        </sequenceFlow>
         <sequenceFlow sourceRef="ACT15893881539162" targetRef="GTW15893892454598" name="sf85" id="sf85">
             <extensionElements>
                 <ns5:OracleExtensions>
@@ -2134,11 +1978,58 @@
             <extensionElements>
                 <ns5:OracleExtensions>
                     <ns5:SequenceFlowAttributes>
-                        <ns5:Positions x="1494" y="149"/>
+                        <ns5:Positions x="1588" y="397"/>
                     </ns5:SequenceFlowAttributes>
                     <ns5:FeatureSet>
                         <ns5:BooleanFeature value="false" name="collapseMessage"/>
-                        <ns5:StringFeature value="1494,149" name="curve"/>
+                        <ns5:StringFeature value="1588,397" name="curve"/>
+                        <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="ACT15903151841773" targetRef="GTW15860728593215" name="sf50" id="sf50">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="GTW15903173140840" targetRef="ACT15903151841773" name="sf51" id="sf51">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes/>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="-2147483648,-2147483648" name="curve"/>
+                        <ns5:StringFeature value="STRAIGHT" name="routing"/>
+                        <ns5:StringFeature value="YES" name="userName"/>
+                        <ns5:IntegerFeature value="0" name="order"/>
+                    </ns5:FeatureSet>
+                </ns5:OracleExtensions>
+            </extensionElements>
+            <conditionExpression xsi:type="tFormalExpression" language="http://www.w3.org/1999/XPath" ns7:ns="http://xmlns.oracle.com/bpel/workflow/task" ns7:bpmn="http://www.omg.org/bpmn20" xmlns:ns7="http://xmlns.oracle.com/bpm/XPathNamespace">count(bpmn:getDataObject('DO_USERCOMMENTS')/ns:userComment) &gt; 0
+                <extensionElements>
+                    <ns5:OracleExtensions>
+                        <ns5:Expression mode="xpath"/>
+                    </ns5:OracleExtensions>
+                </extensionElements>
+            </conditionExpression>
+        </sequenceFlow>
+        <sequenceFlow sourceRef="GTW15903173140840" targetRef="GTW15860728593215" name="sf54" id="sf54">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:SequenceFlowAttributes>
+                        <ns5:Positions x="1943" y="124"/>
+                    </ns5:SequenceFlowAttributes>
+                    <ns5:FeatureSet>
+                        <ns5:BooleanFeature value="false" name="collapseMessage"/>
+                        <ns5:StringFeature value="1943,124" name="curve"/>
                         <ns5:StringFeature value="ORTHOGONAL" name="routing"/>
                     </ns5:FeatureSet>
                 </ns5:OracleExtensions>
@@ -2230,6 +2121,15 @@
                 <ns5:OracleExtensions>
                     <ns5:DataObjectType initialize="true">
                         <ns5:TypeRef namespace="http://www.w3.org/2001/XMLSchema" type="decimal" isArray="false"/>
+                    </ns5:DataObjectType>
+                </ns5:OracleExtensions>
+            </extensionElements>
+        </dataObject>
+        <dataObject name="DO_USERCOMMENTS" id="DO_USERCOMMENTS">
+            <extensionElements>
+                <ns5:OracleExtensions>
+                    <ns5:DataObjectType initialize="true">
+                        <ns5:TypeRef namespace="http://xmlns.oracle.com/bpel/workflow/task" element="task_1" isArray="false"/>
                     </ns5:DataObjectType>
                 </ns5:OracleExtensions>
             </extensionElements>

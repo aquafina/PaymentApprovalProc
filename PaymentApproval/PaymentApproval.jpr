@@ -5,6 +5,11 @@
    <value n="BP_SaveApprover_ProcessName" v="BP_SaveApprover"/>
    <value n="BP_SaveApprover_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BP_SaveApprover_wsdl" v="BP_SaveApprover.wsdl"/>
+   <url n="BP_SaveUserComments_bpelFileURL" path="BP_SaveUserComments.bpel"/>
+   <value n="BP_SaveUserComments_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"/>
+   <value n="BP_SaveUserComments_ProcessName" v="BP_SaveUserComments"/>
+   <value n="BP_SaveUserComments_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BP_SaveUserComments_wsdl" v="BP_SaveUserComments.wsdl"/>
    <url n="BP_UpdateFlags_bpelFileURL" path="BP_UpdateFlags.bpel"/>
    <value n="BP_UpdateFlags_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_UpdateFlags"/>
    <value n="BP_UpdateFlags_ProcessName" v="BP_UpdateFlags"/>
@@ -14,6 +19,10 @@
    <value n="BPELProcess1_ProcessName" v="BPELProcess1"/>
    <value n="BPELProcess1_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BPELProcess1_wsdl" v="BPELProcess1.wsdl"/>
+   <value n="BPL_SaveComments_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPL_SaveComments"/>
+   <value n="BPL_SaveComments_ProcessName" v="BPL_SaveComments"/>
+   <value n="BPL_SaveComments_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="BPL_SaveComments_wsdl" v="BPL_SaveComments.wsdl"/>
    <hash n="component-versions">
       <value n="oracle.adfdt.controller.adfc.source.migration.AdfControllerSchemaMigrator" v="11.1.1.1.0"/>
       <value n="oracle.adfdt.controller.common.migrator.ProjectMigrator" v="11.1.1.1.0"/>
@@ -75,7 +84,19 @@
       <string v="oracle.tip.tools.ide.fabric.addin.SCAContentSetProvider/sca-content"/>
    </list>
    <value n="defaultPackage" v="net.nishat"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveApprover"/>
+   <value n="fuckyou_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/fuckyou"/>
+   <value n="fuckyou_ProcessName" v="fuckyou"/>
+   <value n="fuckyou_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="fuckyou_wsdl" v="fuckyou.wsdl"/>
+   <value n="fuckyouagain_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/fuckyouagain"/>
+   <value n="fuckyouagain_ProcessName" v="fuckyouagain"/>
+   <value n="fuckyouagain_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="fuckyouagain_wsdl" v="fuckyouagain.wsdl"/>
+   <value n="motherfucker_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/motherfucker"/>
+   <value n="motherfucker_ProcessName" v="motherfucker"/>
+   <value n="motherfucker_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="motherfucker_wsdl" v="motherfucker.wsdl"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -396,6 +417,10 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BP_SaveApprover"/>
+   <value n="ProcessName" v="BP_SaveUserComments"/>
+   <value n="skullfucker_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/skullfucker"/>
+   <value n="skullfucker_ProcessName" v="skullfucker"/>
+   <value n="skullfucker_Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="skullfucker_wsdl" v="skullfucker.wsdl"/>
    <value n="Template" v="BPEL_SYNC_PROCESS"/>
 </jpr:project>

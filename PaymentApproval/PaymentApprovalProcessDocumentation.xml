@@ -112,14 +112,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT15886871888934">
-                <labels>
-                    <label locale="en">SAVE_COMMENT</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
             <topicDocumentation name="ACT15893881539162">
                 <labels>
                     <label locale="en">GET_ACCOUNTING_EVENT</label>
@@ -184,6 +176,22 @@
             <topicDocumentation name="GTW15893892454598">
                 <labels>
                     <label locale="en">IS_DRAFTED</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT15903151841773">
+                <labels>
+                    <label locale="en">SAVEUSER_COMMENTS</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW15903173140840">
+                <labels>
+                    <label locale="en">HAS_COMMENTS</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -295,7 +303,6 @@
             <topicDocumentation name="sf41"/>
             <topicDocumentation name="sf93"/>
             <topicDocumentation name="sf65"/>
-            <topicDocumentation name="sf45"/>
             <topicDocumentation name="sf85"/>
             <topicDocumentation name="sf86">
                 <labels>
@@ -306,6 +313,16 @@
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf89"/>
+            <topicDocumentation name="sf50"/>
+            <topicDocumentation name="sf51">
+                <labels>
+                    <label locale="en">YES</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf54"/>
         </topicDocumentations>
     </component>
 </processDocumentation>

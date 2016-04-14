@@ -1,0 +1,83 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!--
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  Oracle JDeveloper BPEL Designer 
+  
+  Created: Thu Apr 14 13:49:13 PKT 2016
+  Author:  kaka
+  Type: BPEL 1.1 Process
+  Purpose: Synchronous BPEL Process
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<process name="BP_SaveUserComments"
+               targetNamespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"
+               xmlns="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+               xmlns:client="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"
+               xmlns:ora="http://schemas.oracle.com/xpath/extension"
+               xmlns:bpelx="http://schemas.oracle.com/bpel/extension"
+         xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/"
+         xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/SaveComment"
+         xmlns:bpel2="http://docs.oasis-open.org/wsbpel/2.0/process/executable">
+
+    <!-- 
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        PARTNERLINKS                                                      
+        List of services participating in this BPEL process               
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    --> 
+  <partnerLinks>
+    <!-- 
+      The 'client' role represents the requester of this service. It is 
+      used for callback. The location and correlation information associated
+      with the client role are automatically set using WS-Addressing.
+    -->
+    <partnerLink name="bp_saveusercomments_client" partnerLinkType="client:BP_SaveUserComments" myRole="BP_SaveUserCommentsProvider"/>
+    <partnerLink name="SaveComment" partnerLinkType="ns1:SaveComment_plt"
+                 partnerRole="SaveComment_role"/>
+  </partnerLinks>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      VARIABLES                                                        
+      List of messages and XML documents used within this BPEL process 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <variables>
+    <!-- Reference to the message passed as input during initiation -->
+    <variable name="inputVariable" messageType="client:BP_SaveUserCommentsRequestMessage"/>
+
+    <!-- Reference to the message that will be returned to the requester-->
+    <variable name="outputVariable" messageType="client:BP_SaveUserCommentsResponseMessage"/>
+    <variable name="InvokeSaveComments_merge_InputVariable"
+              messageType="ns1:XxPaymentApprovalCommentsCollection_msg"/>
+  </variables>
+
+  <!-- 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+     ORCHESTRATION LOGIC                                               
+     Set of activities coordinating the flow of messages across the    
+     services integrated within this business process                  
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  -->
+  <sequence name="main">
+
+    <!-- Receive input from requestor. (Note: This maps to operation defined in BP_SaveUserComments.wsdl) -->
+    <receive name="receiveInput" partnerLink="bp_saveusercomments_client" portType="client:BP_SaveUserComments" operation="process" variable="inputVariable" createInstance="yes"/>
+    <assign name="Transform1">
+      <bpelx:annotation>
+        <bpelx:pattern>transformation</bpelx:pattern>
+      </bpelx:annotation>
+      <copy>
+        <from expression="ora:doXSLTransformForDoc('xsl/Transformation_4.xsl', $inputVariable.payload)"/>
+        <to variable="InvokeSaveComments_merge_InputVariable"
+            part="XxPaymentApprovalCommentsCollection"/>
+      </copy>
+    </assign>
+    <invoke name="InvokeSaveComments"
+            inputVariable="InvokeSaveComments_merge_InputVariable"
+            partnerLink="SaveComment" portType="ns1:SaveComment_ptt"
+            operation="merge" bpelx:invokeAsDetail="no"/>
+    <!-- Generate reply to synchronous request -->
+    <reply name="replyOutput" partnerLink="bp_saveusercomments_client" portType="client:BP_SaveUserComments" operation="process" variable="outputVariable"/>
+  </sequence>
+</process>
