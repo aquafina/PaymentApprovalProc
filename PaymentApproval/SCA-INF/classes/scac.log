@@ -1,48 +1,48 @@
-Apr 14, 2016 2:43:49 PM oracle.mds
+Apr 20, 2016 11:28:33 AM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Apr 14, 2016 2:43:50 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Apr 20, 2016 11:28:34 AM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Apr 14, 2016 2:43:50 PM oracle.mds
+Apr 20, 2016 11:28:34 AM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Apr 14, 2016 2:43:51 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Apr 20, 2016 11:28:34 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Apr 14, 2016 2:43:56 PM com.collaxa.cube.CubeLogger info
+Apr 20, 2016 11:28:43 AM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveApprover.bpel" ...
-Apr 14, 2016 2:43:56 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Apr 20, 2016 11:28:43 AM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 14, 2016 2:43:56 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Apr 20, 2016 11:28:43 AM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 14, 2016 2:43:57 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveApprover" in 58.9 milliseconds [nodes 7=0+7, 118.8 nodes/sec]
-Apr 14, 2016 2:44:01 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveApprover" in 3.898 seconds
-Apr 14, 2016 2:44:01 PM com.collaxa.cube.CubeLogger info
+Apr 20, 2016 11:28:45 AM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveApprover" in 146.9 milliseconds [nodes 7=0+7, 47.7 nodes/sec]
+Apr 20, 2016 11:28:52 AM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveApprover" in 6.909 seconds
+Apr 20, 2016 11:28:52 AM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 1.1 milliseconds
 
-Apr 14, 2016 2:44:01 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveApprover" in 9.4 milliseconds
+Apr 20, 2016 11:28:52 AM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveApprover" in 60.7 milliseconds
 
-Apr 14, 2016 2:44:01 PM com.collaxa.cube.CubeLogger info
+Apr 20, 2016 11:28:52 AM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_UpdateFlags.bpel" ...
-Apr 14, 2016 2:44:01 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_UpdateFlags" in 15.3 milliseconds [nodes 7=0+7, 457.6 nodes/sec]
-Apr 14, 2016 2:44:04 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_UpdateFlags" in 3.289 seconds
-Apr 14, 2016 2:44:04 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 1.0 milliseconds
+Apr 20, 2016 11:28:52 AM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_UpdateFlags" in 15.4 milliseconds [nodes 7=0+7, 454.0 nodes/sec]
+Apr 20, 2016 11:28:55 AM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_UpdateFlags" in 3.144 seconds
+Apr 20, 2016 11:28:55 AM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.8 milliseconds
 
-Apr 14, 2016 2:44:04 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_UpdateFlags" in 7.4 milliseconds
+Apr 20, 2016 11:28:55 AM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_UpdateFlags" in 6.3 milliseconds
 
-Apr 14, 2016 2:44:04 PM com.collaxa.cube.CubeLogger info
+Apr 20, 2016 11:28:55 AM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveUserComments.bpel" ...
-Apr 14, 2016 2:44:04 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveUserComments" in 22.7 milliseconds [nodes 7=0+7, 309.0 nodes/sec]
-Apr 14, 2016 2:44:08 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveUserComments" in 3.178 seconds
-Apr 14, 2016 2:44:08 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 1.0 milliseconds
+Apr 20, 2016 11:28:55 AM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveUserComments" in 10.0 milliseconds [nodes 7=0+7, 697.6 nodes/sec]
+Apr 20, 2016 11:28:58 AM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveUserComments" in 2.615 seconds
+Apr 20, 2016 11:28:58 AM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.8 milliseconds
 
-Apr 14, 2016 2:44:08 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveUserComments" in 7.3 milliseconds
+Apr 20, 2016 11:28:58 AM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveUserComments" in 5.8 milliseconds
 
