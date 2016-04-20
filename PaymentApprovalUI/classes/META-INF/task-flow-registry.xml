@@ -30,4 +30,5 @@
       <input-parameter name="bpmWorklistRoute"/>
       <input-parameter name="lg"/>
    </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/VIEW_ACCOUNTING_TaskFlow.xml" id="VIEW_ACCOUNTING" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
 </task-flow-registry>

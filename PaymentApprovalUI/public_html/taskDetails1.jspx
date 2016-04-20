@@ -630,6 +630,10 @@
                         <f:validator binding="#{row.bindings.personId.validator}"/>
                       </af:inputText>
                     </af:column>
+                    <af:column id="c25" headerText="View Accounting">
+                      <af:commandButton text="View" id="cb3"
+                                        action="view_accounting"/>
+                    </af:column>
                   </af:table>
                 </af:panelGroupLayout>
               </af:showDetailHeader>

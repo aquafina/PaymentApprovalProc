@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="accountingLinesPageDef"
+                Package="paymentapprovalui.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="VO_ACCOUNTING_LINES1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VO_ACCOUNTING_LINES1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VO_ACCOUNTING_LINES1Iterator" id="VO_ACCOUNTING_LINES1">
+      <nodeDefinition DefName="net.nishat.model.VO_ACCOUNTING_LINES"
+                      Name="VO_ACCOUNTING_LINES10">
+        <AttrNames>
+          <Item Value="CheckId"/>
+          <Item Value="CodeComboId"/>
+          <Item Value="CodeCommb"/>
+          <Item Value="AccDesc"/>
+          <Item Value="EnteredDr"/>
+          <Item Value="EnteredCr"/>
+          <Item Value="AccountedDr"/>
+          <Item Value="AccountedCr"/>
+          <Item Value="CodeCombinationId"/>
+          <Item Value="GlDate"/>
+          <Item Value="CurrencyCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

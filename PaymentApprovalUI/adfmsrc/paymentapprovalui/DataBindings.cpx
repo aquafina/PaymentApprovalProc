@@ -5,13 +5,24 @@
   <pageMap>
     <page path="/taskDetails1.jspx"
           usageId="paymentapprovalui_taskDetails1PageDef"/>
+    <page path="/accountingLines.jspx"
+          usageId="paymentapprovalui_accountingLinesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="paymentapprovalui_taskDetails1PageDef"
           path="paymentapprovalui.pageDefs.taskDetails1PageDef"/>
+    <page id="paymentapprovalui_accountingLinesPageDef"
+          path="paymentapprovalui.pageDefs.accountingLinesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"
         path="paymentapprovalui.PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"/>
+    <BC4JDataControl id="AppModuleDataControl" Package="net.nishat.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>
 </Application>

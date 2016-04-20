@@ -267,6 +267,12 @@
         <name id="__141">new</name>
       </outcome>
     </task-flow-return>
+    <task-flow-call id="VIEW_ACCOUNTING">
+      <task-flow-reference>
+        <document>/WEB-INF/VIEW_ACCOUNTING_TaskFlow.xml</document>
+        <id>VIEW_ACCOUNTING</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__114">
       <from-activity-id id="__116">*</from-activity-id>
       <control-flow-case id="__115">
@@ -300,6 +306,13 @@
       <control-flow-case id="__143">
         <from-outcome id="__145">fetchNewTask</from-outcome>
         <to-activity-id id="__146">taskFlowCompleted</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__236">
+      <from-activity-id id="__237">taskDetails1_jspx</from-activity-id>
+      <control-flow-case id="__239">
+        <from-outcome id="__240">view_accounting</from-outcome>
+        <to-activity-id id="__238">VIEW_ACCOUNTING</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility id="__224">

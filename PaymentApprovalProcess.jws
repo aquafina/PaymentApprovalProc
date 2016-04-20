@@ -1,5 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <jws:workspace xmlns:jws="http://xmlns.oracle.com/ide/project">
+   <hash n="adrs-workspace-properties">
+      <value n="adrs-instance-binding" v="DefaultServer"/>
+   </hash>
    <value n="application-package-prefix" v="net.nishat"/>
    <value n="appTemplateId" v="BPMApplicationTemplate"/>
    <hash n="component-versions">
@@ -16,6 +19,7 @@
    <list n="listOfChildren">
       <hash><url n="URL" path="PaymentApproval/PaymentApproval.jpr"/></hash>
       <hash><url n="URL" path="PaymentApprovalUI/PaymentApprovalUI.jpr"/></hash>
+      <hash><url n="URL" path="SupportingData/SupportingData.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">

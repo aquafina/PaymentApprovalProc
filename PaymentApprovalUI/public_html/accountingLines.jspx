@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/taskDetailsTemplate3.jspx" id="pt1">
+          <f:facet name="action"/>
+          <f:facet name="header"/>
+          <f:facet name="body">
+            <af:table value="#{bindings.VO_ACCOUNTING_LINES1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.VO_ACCOUNTING_LINES1.rangeSize}"
+                      emptyText="#{bindings.VO_ACCOUNTING_LINES1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.VO_ACCOUNTING_LINES1.rangeSize}"
+                      rowBandingInterval="0" id="t1">
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.CheckId.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.CheckId.label}"
+                         id="c4">
+                <af:outputText value="#{row.CheckId}" id="ot3">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.CheckId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeComboId.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeComboId.label}"
+                         id="c3">
+                <af:outputText value="#{row.CodeComboId}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeComboId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeCommb.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeCommb.label}"
+                         id="c11">
+                <af:outputText value="#{row.CodeCommb}" id="ot5"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.AccDesc.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.AccDesc.label}"
+                         id="c7">
+                <af:outputText value="#{row.AccDesc}" id="ot10"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredDr.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredDr.label}"
+                         id="c6">
+                <af:outputText value="#{row.EnteredDr}" id="ot7">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredDr.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredCr.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredCr.label}"
+                         id="c10">
+                <af:outputText value="#{row.EnteredCr}" id="ot2">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.EnteredCr.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedDr.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedDr.label}"
+                         id="c1">
+                <af:outputText value="#{row.AccountedDr}" id="ot8">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedDr.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedCr.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedCr.label}"
+                         id="c5">
+                <af:outputText value="#{row.AccountedCr}" id="ot1">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.AccountedCr.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeCombinationId.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeCombinationId.label}"
+                         id="c2">
+                <af:outputText value="#{row.CodeCombinationId}" id="ot9">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.CodeCombinationId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.GlDate.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.GlDate.label}"
+                         id="c9">
+                <af:outputText value="#{row.GlDate}" id="ot4">
+                  <af:convertDateTime pattern="#{bindings.VO_ACCOUNTING_LINES1.hints.GlDate.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.VO_ACCOUNTING_LINES1.hints.CurrencyCode.name}"
+                         sortable="false"
+                         headerText="#{bindings.VO_ACCOUNTING_LINES1.hints.CurrencyCode.label}"
+                         id="c8">
+                <af:outputText value="#{row.CurrencyCode}" id="ot11"/>
+              </af:column>
+            </af:table>
+          </f:facet>
+          <f:facet name="comment"/>
+          <f:facet name="attachment"/>
+          <f:facet name="history"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
