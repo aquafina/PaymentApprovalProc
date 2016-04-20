@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="VIEW_ACCOUNTING_TaskFlow_VIEW_ACCOUNTING_ExecuteWithParamsPageDef"
+                Package="paymentapprovalui.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="VO_ACCOUNTING_LINES1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VO_ACCOUNTING_LINES1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="VO_ACCOUNTING_LINES1Iterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="p_cdate_lo" NDValue="#{pageFlowScope.to_todate}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="p_cdate_hi" NDValue="#{pageFlowScope.to_fromdate}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="p_check_id" NDValue="#{pageFlowScope.to_checkid}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+  </bindings>
+</pageDefinition>

@@ -7,12 +7,16 @@
           usageId="paymentapprovalui_taskDetails1PageDef"/>
     <page path="/accountingLines.jspx"
           usageId="paymentapprovalui_accountingLinesPageDef"/>
+    <page path="/WEB-INF/VIEW_ACCOUNTING_TaskFlow.xml#VIEW_ACCOUNTING@ExecuteWithParams"
+          usageId="paymentapprovalui_VIEW_ACCOUNTING_TaskFlow_VIEW_ACCOUNTING_ExecuteWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="paymentapprovalui_taskDetails1PageDef"
           path="paymentapprovalui.pageDefs.taskDetails1PageDef"/>
     <page id="paymentapprovalui_accountingLinesPageDef"
           path="paymentapprovalui.pageDefs.accountingLinesPageDef"/>
+    <page id="paymentapprovalui_VIEW_ACCOUNTING_TaskFlow_VIEW_ACCOUNTING_ExecuteWithParamsPageDef"
+          path="paymentapprovalui.pageDefs.VIEW_ACCOUNTING_TaskFlow_VIEW_ACCOUNTING_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <dc id="PaymentApprovalUI_APPROVE_PAYMENT_DOCUMENT"

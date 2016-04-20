@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="VIEW_ACCOUNTING">
-    <default-activity id="__1">accountingLines</default-activity>
+    <default-activity id="__22">ExecuteWithParams</default-activity>
+    <input-parameter-definition id="__9">
+      <name id="__8">to_checkid</name>
+      <value>#{pageFlowScope.to_checkid}</value>
+      <class>oracle.jbo.domain.Number</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__10">
+      <name id="__11">to_todate</name>
+      <value>#{pageFlowScope.to_todate}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__13">
+      <name id="__12">to_fromdate</name>
+      <value>#{pageFlowScope.to_fromdate}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
     <view id="accountingLines">
       <page>/accountingLines.jspx</page>
     </view>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome id="__21">
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__27">
+        <from-outcome id="__26">ExecuteWithParams</from-outcome>
+        <to-activity-id id="__25">accountingLines</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
   </task-flow-definition>
 </adfc-config>

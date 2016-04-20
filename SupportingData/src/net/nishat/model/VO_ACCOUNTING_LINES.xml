@@ -30,8 +30,7 @@
   <Variable
     Name="p_check_id"
     Kind="where"
-    Type="oracle.jbo.domain.Number"
-    DefaultValue="2317535"/>
+    Type="oracle.jbo.domain.Number"/>
   <SQLQuery>
     <![CDATA[SELECT  aca.CHECK_ID,
 gcc.code_combination_id CODE_COMBO_ID,
@@ -213,7 +212,7 @@ gcc.code_combination_id CODE_COMBO_ID,
     ColumnType="DATE"
     AliasName="GL_DATE"
     Expression="GL_DATE"
-    SQLType="TIMESTAMP">
+    SQLType="DATE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>

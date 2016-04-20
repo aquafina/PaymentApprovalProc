@@ -343,7 +343,8 @@
                             filterVisible="true" varStatus="vs"
                             selectionListener="#{bindings.XxPaymentApprovalData.collectionModel.makeCurrent}"
                             rowSelection="multiple" id="t2"
-                            partialTriggers="::cb2 ::cb1" width="100%">
+                            partialTriggers="::cb2 ::cb1" width="100%"
+                            scrollPolicy="scroll" autoHeightRows="25">
                     <af:column sortProperty="#{bindings.XxPaymentApprovalData.hints.paymentVr.name}"
                                filterable="true" sortable="true"
                                headerText="#{bindings.XxPaymentApprovalData.hints.paymentVr.label}"
@@ -577,16 +578,22 @@
                     <af:column sortProperty="#{bindings.XxPaymentApprovalData.hints.checkId.name}"
                                filterable="true" sortable="true"
                                headerText="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
-                               id="c8">
-                      <af:inputText value="#{row.bindings.checkId.inputValue}"
-                                    label="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
-                                    required="#{bindings.XxPaymentApprovalData.hints.checkId.mandatory}"
-                                    columns="#{bindings.XxPaymentApprovalData.hints.checkId.displayWidth}"
-                                    maximumLength="#{bindings.XxPaymentApprovalData.hints.checkId.precision}"
-                                    shortDesc="#{bindings.XxPaymentApprovalData.hints.checkId.tooltip}"
-                                    id="it12">
-                        <f:validator binding="#{row.bindings.checkId.validator}"/>
-                      </af:inputText>
+                               id="c8" rendered="true">
+                      <af:commandLink text="#{row.bindings.checkId.inputValue}" id="cl1"
+                                      useWindow="true" action="view_accounting">
+                        <af:inputText
+                                      label="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
+                                      required="#{bindings.XxPaymentApprovalData.hints.checkId.mandatory}"
+                                      columns="#{bindings.XxPaymentApprovalData.hints.checkId.displayWidth}"
+                                      maximumLength="#{bindings.XxPaymentApprovalData.hints.checkId.precision}"
+                                      shortDesc="#{bindings.XxPaymentApprovalData.hints.checkId.tooltip}"
+                                      id="it12">
+                          <f:validator binding="#{row.bindings.checkId.validator}"/>
+                        </af:inputText>
+                        <af:setPropertyListener from="#{row.bindings.checkId.inputValue}"
+                                                to="#{pageFlowScope.from_checkid}"
+                                                type="action"/>
+                      </af:commandLink>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxPaymentApprovalData.hints.invoicePaymentId.name}"
                                filterable="true" sortable="true"
@@ -631,8 +638,14 @@
                       </af:inputText>
                     </af:column>
                     <af:column id="c25" headerText="View Accounting">
-                      <af:commandButton text="View" id="cb3"
-                                        action="view_accounting"/>
+                      <af:commandButton text="View Accounting of check#: #{row.bindings.checkNo.inputValue}" id="cb3"
+                                        action="view_accounting"
+                                        useWindow="true" windowHeight="800"
+                                        windowWidth="750">
+                        <af:setPropertyListener from="#{row.bindings.checkId.inputValue}"
+                                                to="#{pageFlowScope.from_checkid}"
+                                                type="action"/>
+                      </af:commandButton>
                     </af:column>
                   </af:table>
                 </af:panelGroupLayout>

@@ -272,6 +272,23 @@
         <document>/WEB-INF/VIEW_ACCOUNTING_TaskFlow.xml</document>
         <id>VIEW_ACCOUNTING</id>
       </task-flow-reference>
+      <input-parameter id="__235">
+        <name>to_checkid</name>
+        <value>#{pageFlowScope.from_checkid}</value>
+      </input-parameter>
+      <input-parameter id="__236">
+        <name>to_todate</name>
+        <value>#{pageFlowScope.from_todate}</value>
+      </input-parameter>
+      <input-parameter id="__237">
+        <name>to_fromdate</name>
+        <value>#{pageFlowScope.from_fromdate}</value>
+      </input-parameter>
+      <run-as-dialog>
+        <display-type id="__238">
+          <external-window/>
+        </display-type>
+      </run-as-dialog>
     </task-flow-call>
     <control-flow-rule id="__114">
       <from-activity-id id="__116">*</from-activity-id>
@@ -308,11 +325,11 @@
         <to-activity-id id="__146">taskFlowCompleted</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
-    <control-flow-rule id="__236">
-      <from-activity-id id="__237">taskDetails1_jspx</from-activity-id>
-      <control-flow-case id="__239">
-        <from-outcome id="__240">view_accounting</from-outcome>
-        <to-activity-id id="__238">VIEW_ACCOUNTING</to-activity-id>
+    <control-flow-rule id="__230">
+      <from-activity-id id="__231">taskDetails1_jspx</from-activity-id>
+      <control-flow-case id="__232">
+        <from-outcome id="__234">view_accounting</from-outcome>
+        <to-activity-id id="__233">VIEW_ACCOUNTING</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility id="__224">
