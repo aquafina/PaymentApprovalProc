@@ -107,7 +107,7 @@
       <property
          name="fromOutcome">fetchNextTask</property>
       <property
-         name="sdm:polyPoints">B64,507.0,557.7425,275.6875,1158.6035,T50</property>
+         name="sdm:polyPoints">B64,507.0,558.34564,275.6875,1158.6035,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -127,7 +127,7 @@
       <property
          name="fromOutcome">closeTaskFlow</property>
       <property
-         name="sdm:polyPoints">L45,464.0,507.9336,316.6875,460.60352,R50</property>
+         name="sdm:polyPoints">L45,464.0,508.53125,316.6875,460.60352,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -137,7 +137,7 @@
       <property
          name="fromOutcome">fetchPreviousTask</property>
       <property
-         name="sdm:polyPoints">B36,493.0,553.9336,275.6875,782.6035,T50</property>
+         name="sdm:polyPoints">B36,493.0,554.53125,275.6875,782.6035,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -147,14 +147,14 @@
       <property
          name="fromOutcome">refreshTaskFlow</property>
       <property
-         name="sdm:polyPoints">L55,464.0,514.9336,316.6875,648.6035,R50</property>
+         name="sdm:polyPoints">L55,464.0,515.53125,316.6875,648.6035,R50</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule50">
       <property
          name="activityId">*</property>
       <property
-         name="y">409.4336</property>
+         name="y">410.03125</property>
       <property
          name="x">500.0</property>
    </WildcardControlFlowRule>
@@ -163,7 +163,7 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">511.4336</property>
+         name="y">512.03125</property>
       <property
          name="x">500.0</property>
    </WildcardControlFlowRule>
@@ -172,7 +172,7 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">715.4336</property>
+         name="y">716.03125</property>
       <property
          name="x">500.0</property>
    </WildcardControlFlowRule>
@@ -181,7 +181,7 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">817.4336</property>
+         name="y">818.03125</property>
       <property
          name="x">410.0</property>
    </WildcardControlFlowRule>
@@ -190,7 +190,7 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">817.4336</property>
+         name="y">818.03125</property>
       <property
          name="x">500.0</property>
    </WildcardControlFlowRule>
