@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/taskDetailsTemplate3.jspx" id="pt1">
+          <f:facet name="action"/>
+          <f:facet name="header"/>
+          <f:facet name="body">
+            <af:panelGroupLayout id="pgl1" layout="vertical" halign="center">
+              <af:outputText value="Related Data" id="ot1"
+                             inlineStyle="font-size:medium; font-weight:bold;"/>
+              <h:outputText value="Below data is against Bank Payment Voucher sorted by Purchase Order Number." id="ot13"/>
+              <af:table value="#{bindings.VO_SUPPORTING_DATA1.collectionModel}"
+                        var="row"
+                        rows="#{bindings.VO_SUPPORTING_DATA1.rangeSize}"
+                        emptyText="#{bindings.VO_SUPPORTING_DATA1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.VO_SUPPORTING_DATA1.rangeSize}"
+                        rowBandingInterval="0" id="t1" width="100%">
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.CheckId.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.CheckId.label}"
+                           id="c1">
+                  <af:outputText value="#{row.CheckId}" id="ot10">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.CheckId.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.PoHeaderId.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.PoHeaderId.label}"
+                           id="c7">
+                  <af:outputText value="#{row.PoHeaderId}" id="ot6">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.PoHeaderId.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.PoNumber.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.PoNumber.label}"
+                           id="c6">
+                  <af:outputText value="#{row.PoNumber}" id="ot12"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.PoRate.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.PoRate.label}"
+                           id="c5">
+                  <af:outputText value="#{row.PoRate}" id="ot7">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.PoRate.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.ReceiptNum.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.ReceiptNum.label}"
+                           id="c2">
+                  <af:outputText value="#{row.ReceiptNum}" id="ot9"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.RcvTransactionId.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.RcvTransactionId.label}"
+                           id="c10">
+                  <af:outputText value="#{row.RcvTransactionId}" id="ot5">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.RcvTransactionId.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.QuantityAccepted.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.QuantityAccepted.label}"
+                           id="c9">
+                  <af:outputText value="#{row.QuantityAccepted}" id="ot4">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.QuantityAccepted.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.TotalBeforeMatching.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.TotalBeforeMatching.label}"
+                           id="c4">
+                  <af:outputText value="#{row.TotalBeforeMatching}" id="ot11">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.TotalBeforeMatching.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.TotalAsPerSuplier.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.TotalAsPerSuplier.label}"
+                           id="c11">
+                  <af:outputText value="#{row.TotalAsPerSuplier}" id="ot8">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.TotalAsPerSuplier.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.Varience.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.Varience.label}"
+                           id="c8">
+                  <af:outputText value="#{row.Varience}" id="ot3">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.VO_SUPPORTING_DATA1.hints.Varience.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.VO_SUPPORTING_DATA1.hints.LedgerBalance.name}"
+                           sortable="false"
+                           headerText="#{bindings.VO_SUPPORTING_DATA1.hints.LedgerBalance.label}"
+                           id="c3">
+                  <af:outputText value="#{row.LedgerBalance}" id="ot2"/>
+                </af:column>
+              </af:table>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="comment"/>
+          <f:facet name="attachment"/>
+          <f:facet name="history"/>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

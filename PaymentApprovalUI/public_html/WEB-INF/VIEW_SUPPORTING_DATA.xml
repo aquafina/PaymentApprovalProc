@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="VIEW_SUPPORTING_DATA">
+    <default-activity id="__2">ExecuteWithParams</default-activity>
+    <input-parameter-definition id="__10">
+      <name id="__9">check_id</name>
+      <value>#{pageFlowScope. to_checkid}</value>
+      <class>oracle.jbo.domain.Number</class>
+      <required/>
+    </input-parameter-definition>
+    <method-call id="ExecuteWithParams">
+      <method>#{bindings.ExecuteWithParams.execute}</method>
+      <outcome id="__3">
+        <fixed-outcome>ExecuteWithParams</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="supportingData">
+      <page>/supportingData.jspx</page>
+    </view>
+    <control-flow-rule id="__4">
+      <from-activity-id id="__5">ExecuteWithParams</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__8">ExecuteWithParams</from-outcome>
+        <to-activity-id id="__7">supportingData</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

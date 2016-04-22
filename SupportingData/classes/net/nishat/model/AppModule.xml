@@ -13,4 +13,7 @@
   <ViewUsage
     Name="VO_ACCOUNTING_LINES1"
     ViewObjectName="net.nishat.model.VO_ACCOUNTING_LINES"/>
+  <ViewUsage
+    Name="VO_SUPPORTING_DATA1"
+    ViewObjectName="net.nishat.model.VO_SUPPORTING_DATA"/>
 </AppModule>

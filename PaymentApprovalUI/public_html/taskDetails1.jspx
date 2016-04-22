@@ -16,7 +16,7 @@
       <af:form id="f1" usesUpload="true">
         <af:panelGroupLayout layout="vertical" inlineStyle="padding: 5px;"
                              id="pgl13">
-          <af:panelHeader text="#{bindings.title.inputValue}" id="ph1">
+          <af:panelHeader text=" " id="ph1">
             <f:facet name="info"/>
             <f:facet name="legend"/>
             <f:facet name="menuBar"/>
@@ -149,7 +149,11 @@
                                      visible="#{param.enableNavigationButton != null}"/>
               </af:toolbar>
             </f:facet>
-            <f:facet name="context"/>
+            <f:facet name="context">
+              <af:image source="/images/Logo.png"
+                        shortDesc="Nishat Chunian Logo" id="i3"
+                        inlineStyle="padding:5px;"/>
+            </f:facet>
             <af:panelGroupLayout layout="vertical" id="pgl15">
               <f:facet name="separator">
                 <af:spacer width="15" height="15" id="s7"/>
@@ -286,40 +290,14 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
               </af:showDetailHeader>
-              <af:showDetailHeader size="2" id="apCntHd"
-                                   text="#{resources.CONTENTS}"
-                                   disclosed="#{actionAvailable.discloseContents}">
-                <af:panelFormLayout id="pfl10" rendered="false">
-                  <af:inputText value="#{bindings.parentPersonId.inputValue}"
-                                label="#{bindings.parentPersonId.hints.label}"
-                                required="#{bindings.parentPersonId.hints.mandatory}"
-                                columns="#{bindings.parentPersonId.hints.displayWidth}"
-                                maximumLength="#{bindings.parentPersonId.hints.precision}"
-                                shortDesc="#{bindings.parentPersonId.hints.tooltip}"
-                                id="it22">
-                    <f:validator binding="#{bindings.parentPersonId.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.userName.inputValue}"
-                                label="#{bindings.userName.hints.label}"
-                                required="#{bindings.userName.hints.mandatory}"
-                                columns="#{bindings.userName.hints.displayWidth}"
-                                maximumLength="#{bindings.userName.hints.precision}"
-                                shortDesc="#{bindings.userName.hints.tooltip}"
-                                id="it23">
-                    <f:validator binding="#{bindings.userName.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.childPersonId.inputValue}"
-                                label="#{bindings.childPersonId.hints.label}"
-                                required="#{bindings.childPersonId.hints.mandatory}"
-                                columns="#{bindings.childPersonId.hints.displayWidth}"
-                                maximumLength="#{bindings.childPersonId.hints.precision}"
-                                shortDesc="#{bindings.childPersonId.hints.tooltip}"
-                                id="it21">
-                    <f:validator binding="#{bindings.childPersonId.validator}"/>
-                    <af:convertNumber groupingUsed="false"
-                                      pattern="#{bindings.childPersonId.format}"/>
-                  </af:inputText>
-                </af:panelFormLayout>
+              <af:panelHeader text="Payment Approval Document" id="ph2"
+                              inlineStyle="background-color:#EBEBEB;"
+                              messageType="confirmation">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
                 <af:panelGroupLayout id="plPnl76" layout="vertical"
                                      shortDesc="#{resources.CONTENTS}">
                   <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
@@ -344,9 +322,11 @@
                             selectionListener="#{bindings.XxPaymentApprovalData.collectionModel.makeCurrent}"
                             rowSelection="multiple" id="t2"
                             partialTriggers="::cb2 ::cb1" width="100%"
-                            scrollPolicy="scroll" autoHeightRows="15">
-                    <af:column id="c25" headerText="View Accounting">
-                      <af:commandLink text="Accounting" id="cl2"
+                            scrollPolicy="scroll" autoHeightRows="15"
+                            inlineStyle="margin-top:10px;background-color:#FAFAFA;border:2px #EBEBEB solid;">
+                    <af:column id="c25" headerText="Check No">
+                      <af:commandLink text="#{row.bindings.checkNo.inputValue}"
+                                      id="cl2"
                                       inlineStyle="color:Green; font-weight:bold;"
                                       action="view_accounting" useWindow="true"
                                       windowHeight="650" windowWidth="900">
@@ -359,15 +339,16 @@
                                filterable="true" sortable="true"
                                headerText="#{bindings.XxPaymentApprovalData.hints.paymentVr.label}"
                                id="c2">
-                      <af:inputText value="#{row.bindings.paymentVr.inputValue}"
-                                    label="#{bindings.XxPaymentApprovalData.hints.paymentVr.label}"
-                                    required="#{bindings.XxPaymentApprovalData.hints.paymentVr.mandatory}"
-                                    columns="#{bindings.XxPaymentApprovalData.hints.paymentVr.displayWidth}"
-                                    maximumLength="#{bindings.XxPaymentApprovalData.hints.paymentVr.precision}"
-                                    shortDesc="#{bindings.XxPaymentApprovalData.hints.paymentVr.tooltip}"
-                                    id="it6">
-                        <f:validator binding="#{row.bindings.paymentVr.validator}"/>
-                      </af:inputText>
+                      <af:commandLink text="#{row.bindings.paymentVr.inputValue}"
+                                      id="cl3" action="view_related_data"
+                                      inlineStyle="color:Blue; font-weight:bold;"
+                                      useWindow="true">
+                        <af:outputText shortDesc="#{bindings.XxPaymentApprovalData.hints.paymentVr.tooltip}"
+                                       id="it6"/>
+                        <af:setPropertyListener from="#{row.bindings.checkId.inputValue}"
+                                                to="#{pageFlowScope.from_checkid}"
+                                                type="action"/>
+                      </af:commandLink>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxPaymentApprovalData.hints.invoiceNo.name}"
                                filterable="true" sortable="true"
@@ -589,10 +570,10 @@
                                filterable="true" sortable="true"
                                headerText="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
                                id="c8" rendered="true">
-                      <af:commandLink text="#{row.bindings.checkId.inputValue}" id="cl1"
-                                      useWindow="true" action="view_accounting">
-                        <af:inputText
-                                      label="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
+                      <af:commandLink text="#{row.bindings.checkId.inputValue}"
+                                      id="cl1" useWindow="true"
+                                      action="view_accounting">
+                        <af:inputText label="#{bindings.XxPaymentApprovalData.hints.checkId.label}"
                                       required="#{bindings.XxPaymentApprovalData.hints.checkId.mandatory}"
                                       columns="#{bindings.XxPaymentApprovalData.hints.checkId.displayWidth}"
                                       maximumLength="#{bindings.XxPaymentApprovalData.hints.checkId.precision}"
@@ -649,6 +630,42 @@
                     </af:column>
                   </af:table>
                 </af:panelGroupLayout>
+              </af:panelHeader>
+              <af:showDetailHeader size="2" id="apCntHd"
+                                   text="#{resources.CONTENTS}"
+                                   disclosed="#{actionAvailable.discloseContents}"
+                                   rendered="false">
+                <af:panelFormLayout id="pfl10" rendered="false">
+                  <af:inputText value="#{bindings.parentPersonId.inputValue}"
+                                label="#{bindings.parentPersonId.hints.label}"
+                                required="#{bindings.parentPersonId.hints.mandatory}"
+                                columns="#{bindings.parentPersonId.hints.displayWidth}"
+                                maximumLength="#{bindings.parentPersonId.hints.precision}"
+                                shortDesc="#{bindings.parentPersonId.hints.tooltip}"
+                                id="it22">
+                    <f:validator binding="#{bindings.parentPersonId.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.userName.inputValue}"
+                                label="#{bindings.userName.hints.label}"
+                                required="#{bindings.userName.hints.mandatory}"
+                                columns="#{bindings.userName.hints.displayWidth}"
+                                maximumLength="#{bindings.userName.hints.precision}"
+                                shortDesc="#{bindings.userName.hints.tooltip}"
+                                id="it23">
+                    <f:validator binding="#{bindings.userName.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.childPersonId.inputValue}"
+                                label="#{bindings.childPersonId.hints.label}"
+                                required="#{bindings.childPersonId.hints.mandatory}"
+                                columns="#{bindings.childPersonId.hints.displayWidth}"
+                                maximumLength="#{bindings.childPersonId.hints.precision}"
+                                shortDesc="#{bindings.childPersonId.hints.tooltip}"
+                                id="it21">
+                    <f:validator binding="#{bindings.childPersonId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.childPersonId.format}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
               </af:showDetailHeader>
               <af:switcher facetName="#{actionAvailable.showHistory}" id="s1">
                 <f:facet name="true">

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93"
+                id="VIEW_SUPPORTING_DATA_VIEW_SUPPORTING_DATA_ExecuteWithParamsPageDef"
+                Package="paymentapprovalui.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="VO_SUPPORTING_DATA1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VO_SUPPORTING_DATA1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="VO_SUPPORTING_DATA1Iterator" id="ExecuteWithParams"
+            RequiresUpdateModel="true" Action="executeWithParams">
+      <NamedData NDName="check_id" NDValue="#{pageFlowScope.to_checkid}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </action>
+  </bindings>
+</pageDefinition>

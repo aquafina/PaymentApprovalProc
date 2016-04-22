@@ -290,6 +290,17 @@
         </display-type>
       </run-as-dialog>
     </task-flow-call>
+    <task-flow-call id="VIEW_SUPPORTING_DATA">
+      <task-flow-reference>
+        <document>/WEB-INF/VIEW_SUPPORTING_DATA.xml</document>
+        <id>VIEW_SUPPORTING_DATA</id>
+      </task-flow-reference>
+      <input-parameter id="__226">
+        <name>check_id</name>
+        <value>#{pageFlowScope.from_checkid}</value>
+      </input-parameter>
+      <run-as-dialog/>
+    </task-flow-call>
     <control-flow-rule id="__114">
       <from-activity-id id="__116">*</from-activity-id>
       <control-flow-case id="__115">
@@ -330,6 +341,10 @@
       <control-flow-case id="__232">
         <from-outcome id="__234">view_accounting</from-outcome>
         <to-activity-id id="__233">VIEW_ACCOUNTING</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__228">
+        <from-outcome id="__229">view_related_data</from-outcome>
+        <to-activity-id id="__227">VIEW_SUPPORTING_DATA</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <visibility id="__224">
