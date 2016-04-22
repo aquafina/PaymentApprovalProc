@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="supportingDataPageDef"
+                Package="paymentapprovalui.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="VO_SUPPORTING_DATA1" RangeSize="25"
+              DataControl="AppModuleDataControl"
+              id="VO_SUPPORTING_DATA1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VO_SUPPORTING_DATA1Iterator" id="VO_SUPPORTING_DATA1">
+      <nodeDefinition DefName="net.nishat.model.VO_SUPPORTING_DATA"
+                      Name="VO_SUPPORTING_DATA10">
+        <AttrNames>
+          <Item Value="CheckId"/>
+          <Item Value="PoHeaderId"/>
+          <Item Value="PoNumber"/>
+          <Item Value="PoRate"/>
+          <Item Value="ReceiptNum"/>
+          <Item Value="RcvTransactionId"/>
+          <Item Value="QuantityAccepted"/>
+          <Item Value="TotalBeforeMatching"/>
+          <Item Value="TotalAsPerSuplier"/>
+          <Item Value="Varience"/>
+          <Item Value="LedgerBalance"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

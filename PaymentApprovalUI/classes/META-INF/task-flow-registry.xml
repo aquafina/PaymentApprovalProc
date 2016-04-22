@@ -1,5 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/VIEW_SUPPORTING_DATA.xml" id="VIEW_SUPPORTING_DATA" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false">
+      <input-parameter name="check_id"/>
+   </task-flow-descriptor>
    <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false"/>
    <task-flow-descriptor path="WEB-INF/APPROVE_PAYMENT_DOCUMENT_TaskFlow.xml" id="APPROVE_PAYMENT_DOCUMENT_TaskFlow" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false">
       <input-parameter name="dt"/>

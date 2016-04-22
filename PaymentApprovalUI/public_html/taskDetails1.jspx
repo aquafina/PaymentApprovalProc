@@ -359,15 +359,15 @@
                                filterable="true" sortable="true"
                                headerText="#{bindings.XxPaymentApprovalData.hints.paymentVr.label}"
                                id="c2">
-                      <af:inputText value="#{row.bindings.paymentVr.inputValue}"
-                                    label="#{bindings.XxPaymentApprovalData.hints.paymentVr.label}"
-                                    required="#{bindings.XxPaymentApprovalData.hints.paymentVr.mandatory}"
-                                    columns="#{bindings.XxPaymentApprovalData.hints.paymentVr.displayWidth}"
-                                    maximumLength="#{bindings.XxPaymentApprovalData.hints.paymentVr.precision}"
-                                    shortDesc="#{bindings.XxPaymentApprovalData.hints.paymentVr.tooltip}"
-                                    id="it6">
-                        <f:validator binding="#{row.bindings.paymentVr.validator}"/>
-                      </af:inputText>
+                      <af:commandLink text="#{row.bindings.paymentVr.inputValue}" id="cl3"
+                                      action="view_related_data">
+                        <af:outputText
+                                       shortDesc="#{bindings.XxPaymentApprovalData.hints.paymentVr.tooltip}"
+                                       id="it6"/>
+                        <af:setPropertyListener from="#{row.bindings.checkId.inputValue}"
+                                                to="#{pageFlowScope.from_checkid}"
+                                                type="action"/>
+                      </af:commandLink>
                     </af:column>
                     <af:column sortProperty="#{bindings.XxPaymentApprovalData.hints.invoiceNo.name}"
                                filterable="true" sortable="true"
