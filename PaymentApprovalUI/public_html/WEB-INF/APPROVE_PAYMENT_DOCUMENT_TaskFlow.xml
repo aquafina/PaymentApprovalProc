@@ -299,6 +299,7 @@
         <name>check_id</name>
         <value>#{pageFlowScope.from_checkid}</value>
       </input-parameter>
+      <run-as-dialog/>
     </task-flow-call>
     <control-flow-rule id="__114">
       <from-activity-id id="__116">*</from-activity-id>

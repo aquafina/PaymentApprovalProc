@@ -15,6 +15,7 @@
             <af:panelGroupLayout id="pgl1" layout="vertical" halign="center">
               <af:outputText value="Related Data" id="ot1"
                              inlineStyle="font-size:medium; font-weight:bold;"/>
+              <h:outputText value="Below data is against Bank Payment Voucher sorted by Purchase Order Number." id="ot13"/>
               <af:table value="#{bindings.VO_SUPPORTING_DATA1.collectionModel}"
                         var="row"
                         rows="#{bindings.VO_SUPPORTING_DATA1.rangeSize}"

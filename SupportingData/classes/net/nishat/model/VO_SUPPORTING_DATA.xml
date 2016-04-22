@@ -35,7 +35,7 @@
    ,(pla.unit_price)*(NVL((select quantity from rcv_transactions tt where tt.parent_transaction_id = aila.rcv_transaction_id and tt.transaction_type= 'DELIVER' and tt.shipment_header_id = rsh.shipment_header_id ),RT.QUANTITY)) TOTAL_BEFORE_MATCHING,
    Aila.amount total_as_per_suplier
    ,((pla.unit_price)*(NVL((select quantity from rcv_transactions tt where tt.parent_transaction_id = aila.rcv_transaction_id and tt.transaction_type= 'DELIVER' and tt.shipment_header_id = rsh.shipment_header_id ),RT.QUANTITY))-aila.amount) varience,
-   '232323' ledger_balance
+'232323' ledger_balance
 from 
     ap_checks_all aca
     ,ap_invoice_payments_all apa
@@ -50,15 +50,17 @@ where
     --for po number
     and aila.po_header_id = pha.po_header_id(+)
     --for po rate from po lines
-    and pha.po_header_id = pla.po_header_id(+)
+    --and pha.po_header_id = pla.po_header_id(+)
+    and aila.po_line_id = pla.po_line_id (+)
     --for grn data
     and aila.rcv_transaction_id = rt.transaction_id(+) 
     and rt.shipment_header_id = rsh.shipment_header_id(+)
-    and rt.po_line_id = pla.po_line_id
+    --and rt.po_line_id = pla.po_line_id
     --extended filters
     and aca.status_lookup_code <> 'VOIDED' -- EXCLUDE VOIDED PAYMENTS
     and aila.line_type_lookUp_code = 'ITEM' -- INVOICE LINES MADE FROM SOME PO
-    and aca.check_id = :check_id]]>
+    and aca.check_id = :check_id
+   order by pha.segment1 desc]]>
   </SQLQuery>
   <ViewAttribute
     Name="CheckId"
@@ -218,7 +220,7 @@ where
     ColumnType="CHAR"
     AliasName="LEDGER_BALANCE"
     Expression="LEDGER_BALANCE"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="6"/>
     </DesignTime>

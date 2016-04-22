@@ -102,52 +102,52 @@
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase35"
-      from="WildcardControlFlowRule23"
+      from="WildcardControlFlowRule30"
       to="TaskFlowReturn10">
       <property
          name="fromOutcome">fetchNextTask</property>
       <property
-         name="sdm:polyPoints">L39,169.05125,54.757812,234.6875,1212.6035,L50</property>
+         name="sdm:polyPoints">B64,407.0,611.98236,316.6875,1212.6035,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase36"
-      from="WildcardControlFlowRule23"
+      from="WildcardControlFlowRule30"
       to="TaskFlowReturn4">
       <property
          name="fromOutcome">fetchNewTask</property>
       <property
-         name="sdm:polyPoints">B43,216.5,104.67708,275.6875,970.6035,T50</property>
+         name="sdm:polyPoints">B50,400.0,611.1362,275.6875,970.6035,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase37"
-      from="WildcardControlFlowRule23"
+      from="WildcardControlFlowRule30"
       to="TaskFlowReturn3">
       <property
          name="fromOutcome">closeTaskFlow</property>
       <property
-         name="sdm:polyPoints">B57,223.5,104.25781,275.6875,406.60352,T50</property>
+         name="sdm:polyPoints">L45,364.0,563.47656,275.6875,514.6035,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase38"
-      from="WildcardControlFlowRule23"
+      from="WildcardControlFlowRule30"
       to="TaskFlowReturn5">
       <property
          name="fromOutcome">fetchPreviousTask</property>
       <property
-         name="sdm:polyPoints">L50,176.44426,61.757812,234.6875,836.6035,L50</property>
+         name="sdm:polyPoints">B36,393.0,609.47656,275.6875,782.6035,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase39"
-      from="WildcardControlFlowRule23"
+      from="WildcardControlFlowRule30"
       to="TaskFlowReturn8">
       <property
          name="fromOutcome">refreshTaskFlow</property>
       <property
-         name="sdm:polyPoints">L61,184.0,68.75781,234.6875,648.6035,L50</property>
+         name="sdm:polyPoints">L55,364.0,570.47656,316.6875,648.6035,R50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall56">
@@ -178,51 +178,6 @@
       <property
          name="sdm:polyPoints">R46,132.5,236.19531,378.0039,213.74707,L50</property>
    </ControlFlowCase>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule21">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">62.206055</property>
-      <property
-         name="x">40.0</property>
-   </WildcardControlFlowRule>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule22">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">61.757812</property>
-      <property
-         name="x">130.0</property>
-   </WildcardControlFlowRule>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule23">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">61.757812</property>
-      <property
-         name="x">220.0</property>
-   </WildcardControlFlowRule>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule24">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">61.757812</property>
-      <property
-         name="x">310.0</property>
-   </WildcardControlFlowRule>
-   <WildcardControlFlowRule
-      id="WildcardControlFlowRule25">
-      <property
-         name="activityId">*</property>
-      <property
-         name="y">61.757812</property>
-      <property
-         name="x">400.0</property>
-   </WildcardControlFlowRule>
    <TaskFlowCall
       id="TaskFlowCall27">
       <property
@@ -231,6 +186,8 @@
          name="activityId">VIEW_SUPPORTING_DATA</property>
       <property
          name="documentReference">/WEB-INF/VIEW_SUPPORTING_DATA.xml</property>
+      <property
+         name="runAsDialog">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>VIEW_SUPPORTING_DATA&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
       <property
@@ -250,4 +207,49 @@
       <property
          name="sdm:polyPoints">R54,132.5,243.19531,380.68652,334.7871,L50</property>
    </ControlFlowCase>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule26">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">362.97656</property>
+      <property
+         name="x">40.0</property>
+   </WildcardControlFlowRule>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule27">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">464.97656</property>
+      <property
+         name="x">40.0</property>
+   </WildcardControlFlowRule>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule28">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">464.97656</property>
+      <property
+         name="x">400.0</property>
+   </WildcardControlFlowRule>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule29">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">566.97656</property>
+      <property
+         name="x">40.0</property>
+   </WildcardControlFlowRule>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule30">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">566.97656</property>
+      <property
+         name="x">400.0</property>
+   </WildcardControlFlowRule>
 </SDM>
