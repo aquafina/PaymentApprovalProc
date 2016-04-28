@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="XX_USER_EMAIL.PERSON_ID:db_column_precision">10</entry>
+   <entry key="XX_USER_EMAIL.PERSON_ID:db_column_scale">0</entry>
+   <entry key="XX_USER_EMAIL.EMAIL_ADDRESS:db_column_type">VARCHAR2</entry>
+   <entry key="XX_USER_EMAIL.EMAIL_ADDRESS:db_column_not_null">false</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="XX_USER_EMAIL:db_column_1">PERSON_ID</entry>
+   <entry key="XX_USER_EMAIL:db_column_0">EMAIL_ADDRESS</entry>
+   <entry key="root_descriptor_alias">XX_USER_EMAIL</entry>
+   <entry key="XX_USER_EMAIL.EMAIL_ADDRESS:db_column_size">240</entry>
+   <entry key="XX_USER_EMAIL.PERSON_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_USER_EMAIL:db_table_type">TABLE</entry>
+   <entry key="XX_USER_EMAIL.PERSON_ID:db_column_not_null">true</entry>
+</properties>

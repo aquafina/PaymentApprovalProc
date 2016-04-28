@@ -15,6 +15,11 @@
    <value n="BP_UpdateFlags_ProcessName" v="BP_UpdateFlags"/>
    <value n="BP_UpdateFlags_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="BP_UpdateFlags_wsdl" v="BP_UpdateFlags.wsdl"/>
+   <url n="BPELEmail_bpelFileURL" path="BPELEmail.bpel"/>
+   <value n="BPELEmail_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELEmail"/>
+   <value n="BPELEmail_ProcessName" v="BPELEmail"/>
+   <value n="BPELEmail_Template" v="BPEL_ASYNC_PROCESS"/>
+   <value n="BPELEmail_wsdl" v="BPELEmail.wsdl"/>
    <value n="BPELProcess1_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELProcess1"/>
    <value n="BPELProcess1_ProcessName" v="BPELProcess1"/>
    <value n="BPELProcess1_Template" v="BPEL_SYNC_PROCESS"/>
@@ -96,7 +101,7 @@
    <value n="motherfucker_ProcessName" v="motherfucker"/>
    <value n="motherfucker_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="motherfucker_wsdl" v="motherfucker.wsdl"/>
-   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"/>
+   <value n="Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELEmail"/>
    <hash n="oracle.bpm.fusion.repository.BPMProjectSettings">
       <hash n="bpmProjectsProcessesContentSet">
          <list n="pattern-filters">
@@ -417,10 +422,10 @@
          </list>
       </hash>
    </hash>
-   <value n="ProcessName" v="BP_SaveUserComments"/>
+   <value n="ProcessName" v="BPELEmail"/>
    <value n="skullfucker_Namespace" v="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/skullfucker"/>
    <value n="skullfucker_ProcessName" v="skullfucker"/>
    <value n="skullfucker_Template" v="BPEL_SYNC_PROCESS"/>
    <value n="skullfucker_wsdl" v="skullfucker.wsdl"/>
-   <value n="Template" v="BPEL_SYNC_PROCESS"/>
+   <value n="Template" v="BPEL_ASYNC_PROCESS"/>
 </jpr:project>

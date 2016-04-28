@@ -35,6 +35,12 @@
           location="IsDrafted.wsdl" importType="wsdl"/>
   <import namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments"
           location="BP_SaveUserComments.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELEmail"
+          location="BPELEmail.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+          location="NotificationService.wsdl" importType="wsdl"/>
+  <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetEmailAddress"
+          location="GetEmailAddress.wsdl" importType="wsdl"/>
   <service name="Client_PaymentApprovalProcess"
            ui:wsdlLocation="Client_PaymentApprovalProcess.wsdl">
     <interface.wsdl interface="http://oracle.com/sca/soapservice/PaymentApprovalProcess/PaymentApproval/Client_PaymentApprovalProcess#wsdl.interface(start_payment_approval_process_ptt)"
@@ -69,6 +75,11 @@
   <component name="BP_SaveUserComments" version="1.1">
     <implementation.bpel src="BP_SaveUserComments.bpel"/>
     <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+    <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
+              many="false">async.persist</property>
+  </component>
+  <component name="BPELEmail" version="1.1">
+    <implementation.bpel src="BPELEmail.bpel"/>
     <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string"
               many="false">async.persist</property>
   </component>
@@ -149,6 +160,23 @@
     <property name="jca.retry.maxInterval" type="xs:string" many="false"
               override="may">120</property>
   </reference>
+  <reference name="NotificationService1"
+             ui:wsdlLocation="NotificationService.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+    <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
+                  location="NotificationService.wsdl"/>
+  </reference>
+  <reference name="GetEmailAddress" ui:wsdlLocation="GetEmailAddress.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetEmailAddress#wsdl.interface(GetEmailAddress_ptt)"/>
+    <binding.jca config="GetEmailAddress_db.jca"/>
+    <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+    <property name="jca.retry.interval" type="xs:int" many="false"
+              override="may">1</property>
+    <property name="jca.retry.backoff" type="xs:int" many="false"
+              override="may">2</property>
+    <property name="jca.retry.maxInterval" type="xs:string" many="false"
+              override="may">120</property>
+  </reference>
   <wire>
     <source.uri>Client_PaymentApprovalProcess</source.uri>
     <target.uri>PaymentApprovalProcess/References.Externals.Client_PaymentApprovalProcess.service</target.uri>
@@ -196,5 +224,17 @@
   <wire>
     <source.uri>BP_SaveUserComments/SaveComment</source.uri>
     <target.uri>SaveComment</target.uri>
+  </wire>
+  <wire>
+    <source.uri>BPELEmail/NotificationService1</source.uri>
+    <target.uri>NotificationService1</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.BPEL.BPELEmail.Email_client.reference</source.uri>
+    <target.uri>BPELEmail/email_client</target.uri>
+  </wire>
+  <wire>
+    <source.uri>PaymentApprovalProcess/Services.Externals.GetEmailAddress.reference</source.uri>
+    <target.uri>GetEmailAddress</target.uri>
   </wire>
 </composite>

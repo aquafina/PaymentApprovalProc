@@ -42,4 +42,13 @@
              ui:wsdlLocation="BP_SaveUserComments.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BP_SaveUserComments#wsdl.interface(BP_SaveUserComments)"/>
   </reference>
+  <reference name="Services.BPEL.BPELEmail.Email_client.reference"
+             ui:wsdlLocation="BPELEmail.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELEmail#wsdl.interface(BPELEmail)"
+                    callbackInterface="http://xmlns.oracle.com/PaymentApprovalProcess/PaymentApproval/BPELEmail#wsdl.interface(BPELEmailCallback)"/>
+  </reference>
+  <reference name="Services.Externals.GetEmailAddress.reference"
+             ui:wsdlLocation="GetEmailAddress.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetEmailAddress#wsdl.interface(GetEmailAddress_ptt)"/>
+  </reference>
 </componentType>

@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEmailAddress" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEmailAddress" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxUserEmailCollection" type="XxUserEmailCollection"/>
+   <xs:complexType name="XxUserEmailCollection">
+      <xs:sequence>
+         <xs:element name="XxUserEmail" type="XxUserEmail" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxUserEmail">
+      <xs:sequence>
+         <xs:element name="emailAddress" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="240"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="personId" type="xs:long"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GetEmailAddressSelect_person_idInputParameters" type="GetEmailAddressSelect_person_id"/>
+   <xs:complexType name="GetEmailAddressSelect_person_id">
+      <xs:sequence>
+         <xs:element name="person_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

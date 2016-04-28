@@ -1,0 +1,25 @@
+<?binding.jca GetEmailAddress_db.jca?>
+<wsdl:definitions name="GetEmailAddress" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetEmailAddress" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetEmailAddress" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEmailAddress">
+    <plt:partnerLinkType name="GetEmailAddress_plt">
+        <plt:role name="GetEmailAddress_role">
+            <plt:portType name="tns:GetEmailAddress_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetEmailAddress" schemaLocation="xsd/GetEmailAddress_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetEmailAddressSelect_inputParameters">
+        <wsdl:part name="GetEmailAddressSelect_inputParameters" element="top:GetEmailAddressSelect_person_idInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxUserEmailCollection_msg">
+        <wsdl:part name="XxUserEmailCollection" element="top:XxUserEmailCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="GetEmailAddress_ptt">
+        <wsdl:operation name="GetEmailAddressSelect">
+            <wsdl:input message="tns:GetEmailAddressSelect_inputParameters"/>
+            <wsdl:output message="tns:XxUserEmailCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

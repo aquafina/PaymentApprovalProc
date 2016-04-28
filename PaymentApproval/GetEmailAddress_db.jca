@@ -1,0 +1,14 @@
+<adapter-config name="GetEmailAddress" adapter="Database Adapter" wsdlLocation="GetEmailAddress.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="GetEmailAddress_ptt" operation="GetEmailAddressSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="GetEmailAddress.XxUserEmail"/>
+      <property name="QueryName" value="GetEmailAddressSelect"/>
+      <property name="MappingsMetaDataURL" value="GetEmailAddress-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>
