@@ -1,62 +1,62 @@
-Jun 28, 2016 1:04:48 PM oracle.mds
+Jun 28, 2016 3:35:36 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Jun 28, 2016 1:04:49 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Jun 28, 2016 3:35:36 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Jun 28, 2016 1:04:49 PM oracle.mds
+Jun 28, 2016 3:35:36 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Jun 28, 2016 1:04:49 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+Jun 28, 2016 3:35:36 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
 WARNING: Ignoring composite local workflow schema of file:/E:/BPM/Paperless/PaymentApprovalProc/PaymentApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Jun 28, 2016 1:04:49 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Jun 28, 2016 3:35:36 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Jun 28, 2016 1:04:51 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:39 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveApprover.bpel" ...
-Jun 28, 2016 1:04:51 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Jun 28, 2016 3:35:39 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Jun 28, 2016 1:04:51 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Jun 28, 2016 3:35:39 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Jun 28, 2016 1:04:52 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveApprover" in 37.7 milliseconds [nodes 7=0+7, 185.7 nodes/sec]
-Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveApprover" in 1.890 seconds
-Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:39 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveApprover" in 54.7 milliseconds [nodes 7=0+7, 127.9 nodes/sec]
+Jun 28, 2016 3:35:41 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveApprover" in 1.893 seconds
+Jun 28, 2016 3:35:41 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 0.6 milliseconds
 
-Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveApprover" in 5.2 milliseconds
+Jun 28, 2016 3:35:41 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveApprover" in 5.0 milliseconds
 
-Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:41 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELEmail.bpel" ...
-Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELEmail" in 13.8 milliseconds [nodes 12=1+11, 867.4 nodes/sec]
-Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELEmail" in 1.619 seconds
-Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:41 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELEmail" in 14.3 milliseconds [nodes 12=1+11, 838.9 nodes/sec]
+Jun 28, 2016 3:35:43 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELEmail" in 1.592 seconds
+Jun 28, 2016 3:35:43 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 5 files in 0.6 milliseconds
 
-Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELEmail" in 5.0 milliseconds
+Jun 28, 2016 3:35:43 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELEmail" in 5.8 milliseconds
 
-Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:43 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_UpdateFlags.bpel" ...
-Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_UpdateFlags" in 6.2 milliseconds [nodes 7=0+7, 1,136.9 nodes/sec]
-Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_UpdateFlags" in 1.558 seconds
-Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.6 milliseconds
+Jun 28, 2016 3:35:43 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_UpdateFlags" in 6.2 milliseconds [nodes 7=0+7, 1,129.8 nodes/sec]
+Jun 28, 2016 3:35:45 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_UpdateFlags" in 1.589 seconds
+Jun 28, 2016 3:35:45 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.5 milliseconds
 
-Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_UpdateFlags" in 3.9 milliseconds
+Jun 28, 2016 3:35:45 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_UpdateFlags" in 3.8 milliseconds
 
-Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:45 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveUserComments.bpel" ...
-Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveUserComments" in 17.9 milliseconds [nodes 7=0+7, 391.2 nodes/sec]
-Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveUserComments" in 1.577 seconds
-Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 3:35:45 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveUserComments" in 18.3 milliseconds [nodes 7=0+7, 382.5 nodes/sec]
+Jun 28, 2016 3:35:47 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveUserComments" in 1.520 seconds
+Jun 28, 2016 3:35:47 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 3 files in 0.6 milliseconds
 
-Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveUserComments" in 3.6 milliseconds
+Jun 28, 2016 3:35:47 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveUserComments" in 3.7 milliseconds
 

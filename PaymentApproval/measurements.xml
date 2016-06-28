@@ -2,7 +2,7 @@
 <measurements xmlns="http://xmlns.oracle.com/bpm/analytics/measurement">
     <compositeDN>PaymentApproval</compositeDN>
     <measurementElements>
-        <measurementElement name="PaymentApproval" type="COMPOSITE" enabled="true">
+        <measurementElement enabled="true" type="COMPOSITE" name="PaymentApproval">
             <elementSelection>INTERACTIVE</elementSelection>
             <elementStates>
                 <elementState>ALL</elementState>

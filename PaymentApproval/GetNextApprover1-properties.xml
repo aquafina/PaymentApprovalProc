@@ -1,0 +1,57 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">XX_EMPLOYEE_ORG_CHART_V_GRN</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION_ID:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_PERSON_ID:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_PERSON_ID:db_column_precision">0</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMAIL_ADDRESS:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_11">CHILD_PERSON_ID</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_10">FULL_NAME_CHILD</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMP_CODE:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_PERSON_ID:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMAIL_ADDRESS:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.JOINING:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_PERSON_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMAIL_ADDRESS:db_column_size">240</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.JOINING:db_column_size">150</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.SUBORDINATE_POSITION_ID:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.SUBORDINATE_POSITION_ID:db_column_precision">15</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.SUBORDINATE_POSITION_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.HIERARCHY_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION_ID:db_column_precision">0</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.JOINING:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_table_type">TABLE</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.HIERARCHY_NAME:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.HIERARCHY_NAME:db_column_size">30</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_CHILD:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.SUBORDINATE_POSITION_ID:db_column_scale">0</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION_ID:db_column_type">NUMBER</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMP_CODE:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_PERSON_ID:db_column_precision">10</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_POSITION:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_PERSON_ID:db_column_scale">0</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_POSITION:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION:db_column_size">4000</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_PARENT:db_column_type">VARCHAR2</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_CHILD:db_column_size">240</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.EMP_CODE:db_column_size">150</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_9">JOINING</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_PARENT:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_POSITION:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_8">EMAIL_ADDRESS</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_7">EMP_CODE</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.PARENT_PERSON_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_CHILD:db_column_not_null">false</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_6">CHILD_POSITION</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.CHILD_POSITION:db_column_size">4000</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_5">SUBORDINATE_POSITION_ID</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_4">PARENT_POSITION</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_3">PARENT_PERSON_ID</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_2">FULL_NAME_PARENT</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_1">PARENT_POSITION_ID</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN:db_column_0">HIERARCHY_NAME</entry>
+   <entry key="XX_EMPLOYEE_ORG_CHART_V_GRN.FULL_NAME_PARENT:db_column_size">240</entry>
+</properties>

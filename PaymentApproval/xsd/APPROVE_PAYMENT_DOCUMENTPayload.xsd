@@ -1,11 +1,11 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData">
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/singleString" xmlns:ns0="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData">
    <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData" schemaLocation="GetApprovalData_table.xsd"/>
-   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover" schemaLocation="GetNextApprover_table.xsd"/>
+   <import namespace="http://xmlns.oracle.com/singleString" schemaLocation="singleString.xsd"/>
    <complexType name="APPROVE_PAYMENT_DOCUMENTPayloadType">
       <sequence>
          <element ref="ns0:XxPaymentApprovalDataCollection"/>
-         <element ref="ns1:XxEbsUserHierarchyCollection"/>
+         <element ref="ns1:singleString"/>
       </sequence>
    </complexType>
 </schema>

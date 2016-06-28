@@ -1,0 +1,25 @@
+<?binding.jca GetNextApprover1_db.jca?>
+<wsdl:definitions name="GetNextApprover1" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover1" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover1">
+    <plt:partnerLinkType name="GetNextApprover1_plt">
+        <plt:role name="GetNextApprover1_role">
+            <plt:portType name="tns:GetNextApprover1_ptt"/>
+        </plt:role>
+    </plt:partnerLinkType>
+    <wsdl:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover1" schemaLocation="xsd/GetNextApprover1_table.xsd"/>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetNextApprover1Select_inputParameters">
+        <wsdl:part name="GetNextApprover1Select_inputParameters" element="top:GetNextApprover1Select_child_idInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="XxEmployeeOrgChartVGrnCollection_msg">
+        <wsdl:part name="XxEmployeeOrgChartVGrnCollection" element="top:XxEmployeeOrgChartVGrnCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="GetNextApprover1_ptt">
+        <wsdl:operation name="GetNextApprover1Select">
+            <wsdl:input message="tns:GetNextApprover1Select_inputParameters"/>
+            <wsdl:output message="tns:XxEmployeeOrgChartVGrnCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

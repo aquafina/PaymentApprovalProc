@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object-persistence xmlns="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:eclipselink="http://www.eclipse.org/eclipselink/xsds/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="Eclipse Persistence Services - 2.1.3.v20110304-r9073">
+   <name>GetNextApprover1-OR</name>
+   <class-mapping-descriptors>
+      <class-mapping-descriptor xsi:type="object-relational-class-mapping-descriptor">
+         <class>GetNextApprover1.XxEmployeeOrgChartVGrn</class>
+         <alias>XX_EMPLOYEE_ORG_CHART_V_GRN</alias>
+         <primary-key>
+            <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="CHILD_POSITION" xsi:type="column"/>
+            <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="HIERARCHY_NAME" xsi:type="column"/>
+         </primary-key>
+         <events/>
+         <querying>
+            <queries>
+               <query name="GetNextApprover1Select" xsi:type="read-all-query">
+                  <criteria operator="equal" xsi:type="relation-expression">
+                     <left name="childPersonId" xsi:type="query-key-expression">
+                        <base xsi:type="base-expression"/>
+                     </left>
+                     <right xsi:type="parameter-expression">
+                        <parameter name="child_id" xsi:type="column"/>
+                     </right>
+                  </criteria>
+                  <arguments>
+                     <argument name="child_id">
+                        <type>java.lang.String</type>
+                     </argument>
+                  </arguments>
+                  <reference-class>GetNextApprover1.XxEmployeeOrgChartVGrn</reference-class>
+                  <container xsi:type="list-container-policy">
+                     <collection-type>java.util.Vector</collection-type>
+                  </container>
+               </query>
+            </queries>
+         </querying>
+         <attribute-mappings>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>hierarchyName</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="HIERARCHY_NAME" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>parentPositionId</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="PARENT_POSITION_ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fullNameParent</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="FULL_NAME_PARENT" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>parentPersonId</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="PARENT_PERSON_ID" xsi:type="column"/>
+               <attribute-classification>java.math.BigDecimal</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>parentPosition</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="PARENT_POSITION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>subordinatePositionId</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="SUBORDINATE_POSITION_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>childPosition</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="CHILD_POSITION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>empCode</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="EMP_CODE" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>emailAddress</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="EMAIL_ADDRESS" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>joining</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="JOINING" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>fullNameChild</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="FULL_NAME_CHILD" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>childPersonId</attribute-name>
+               <field table="XX_EMPLOYEE_ORG_CHART_V_GRN" name="CHILD_PERSON_ID" xsi:type="column"/>
+               <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+         </attribute-mappings>
+         <descriptor-type>independent</descriptor-type>
+         <caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+            <always-refresh>true</always-refresh>
+         </caching>
+         <remote-caching>
+            <cache-type>weak-reference</cache-type>
+            <cache-size>-1</cache-size>
+         </remote-caching>
+         <instantiation/>
+         <copying xsi:type="instantiation-copy-policy"/>
+         <tables>
+            <table name="XX_EMPLOYEE_ORG_CHART_V_GRN"/>
+         </tables>
+         <structure>structureName</structure>
+      </class-mapping-descriptor>
+   </class-mapping-descriptors>
+   <login xsi:type="database-login">
+      <platform-class>org.eclipse.persistence.platform.database.oracle.Oracle9Platform</platform-class>
+      <user-name></user-name>
+      <connection-url></connection-url>
+   </login>
+</object-persistence>
