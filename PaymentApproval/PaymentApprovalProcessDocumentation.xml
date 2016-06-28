@@ -136,6 +136,14 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
+            <topicDocumentation name="ACT16016091467929">
+                <labels>
+                    <label locale="en">GET_FEEDER_EMAIL</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
             <topicDocumentation name="EVT15834051903054">
                 <labels>
                     <label locale="en">Start</label>
@@ -200,14 +208,6 @@
             <topicDocumentation name="GTW15903173140840">
                 <labels>
                     <label locale="en">HAS_COMMENTS</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
-            <topicDocumentation name="ACT16016091467929">
-                <labels>
-                    <label locale="en">GET_FEEDER_EMAIL</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>

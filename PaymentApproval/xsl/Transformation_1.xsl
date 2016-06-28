@@ -3,13 +3,13 @@
   <!-- SPECIFICATION OF MAP SOURCES AND TARGETS, DO NOT MODIFY. -->
   <mapSources>
     <source type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/PaymentApprovalProc/PaymentApproval/BP_UpdateFlags.wsdl"/>
+      <schema location="../BP_UpdateFlags.wsdl"/>
       <rootElement name="XxPaymentApprovalDataCollection_copy" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"/>
     </source>
   </mapSources>
   <mapTargets>
     <target type="WSDL">
-      <schema location="../../../../../Development%20Workspace/BPM/PaymentApprovalProc/PaymentApproval/UpdateFlags.wsdl"/>
+      <schema location="../UpdateFlags.wsdl"/>
       <rootElement name="ApChecksAllCollection" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/UpdateFlags"/>
     </target>
   </mapTargets>

@@ -1,62 +1,62 @@
-Apr 28, 2016 5:26:01 PM oracle.mds
+Jun 28, 2016 1:04:48 PM oracle.mds
 NOTIFICATION: PManager instance is created without multitenancy support as JVM flag "oracle.multitenant.enabled" is not set to enable multitenancy support.
-Apr 28, 2016 5:26:02 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
+Jun 28, 2016 1:04:49 PM oracle.security.jps.internal.config.xml.XmlConfigurationFactory initDefaultConfiguration
 SEVERE: java.io.FileNotFoundException: .\config\jps-config.xml (The system cannot find the path specified)
-Apr 28, 2016 5:26:02 PM oracle.mds
+Jun 28, 2016 1:04:49 PM oracle.mds
 NOTIFICATION: Auditing is disabled for component MDS.
-Apr 28, 2016 5:26:03 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
-WARNING: Ignoring composite local workflow schema of file:/E:/Development%20Workspace/BPM/Paperless/PaymentApprovalProc/PaymentApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
-Apr 28, 2016 5:26:03 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+Jun 28, 2016 1:04:49 PM oracle.fabric.common.wsdl.SchemaBuilder resolveWorkFlowSchemas
+WARNING: Ignoring composite local workflow schema of file:/E:/BPM/Paperless/PaymentApprovalProc/PaymentApproval/NotificationService.xsd as there is an MDS shared version of the schema used by workflow engine oramds:/soa/shared/workflow/NotificationService.xsd
+Jun 28, 2016 1:04:49 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFO: XMLSchema incremental build enabled.
-Apr 28, 2016 5:26:12 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 1:04:51 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveApprover.bpel" ...
-Apr 28, 2016 5:26:13 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
+Jun 28, 2016 1:04:51 PM oracle.integration.platform.blocks.FabricConfigManager <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 28, 2016 5:26:13 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
+Jun 28, 2016 1:04:51 PM oracle.integration.platform.blocks.WLSPlatformConfigurationProvider <clinit>
 WARNING: JRF is unable to determine the current application server platform.
-Apr 28, 2016 5:26:13 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveApprover" in 75.2 milliseconds [nodes 7=0+7, 93.1 nodes/sec]
-Apr 28, 2016 5:26:17 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveApprover" in 3.287 seconds
-Apr 28, 2016 5:26:17 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.8 milliseconds
+Jun 28, 2016 1:04:52 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveApprover" in 37.7 milliseconds [nodes 7=0+7, 185.7 nodes/sec]
+Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveApprover" in 1.890 seconds
+Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.6 milliseconds
 
-Apr 28, 2016 5:26:17 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveApprover" in 6.6 milliseconds
+Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveApprover" in 5.2 milliseconds
 
-Apr 28, 2016 5:26:17 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BPELEmail.bpel" ...
-Apr 28, 2016 5:26:17 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BPELEmail" in 20.3 milliseconds [nodes 12=1+11, 591.2 nodes/sec]
-Apr 28, 2016 5:26:19 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BPELEmail" in 1.785 seconds
-Apr 28, 2016 5:26:19 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 1:04:54 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BPELEmail" in 13.8 milliseconds [nodes 12=1+11, 867.4 nodes/sec]
+Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BPELEmail" in 1.619 seconds
+Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
 INFO: Gathered 5 files in 0.6 milliseconds
 
-Apr 28, 2016 5:26:19 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BPELEmail" in 5.5 milliseconds
+Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BPELEmail" in 5.0 milliseconds
 
-Apr 28, 2016 5:26:19 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_UpdateFlags.bpel" ...
-Apr 28, 2016 5:26:19 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_UpdateFlags" in 6.3 milliseconds [nodes 7=0+7, 1,103.8 nodes/sec]
-Apr 28, 2016 5:26:24 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_UpdateFlags" in 5.018 seconds
-Apr 28, 2016 5:26:24 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 1.4 milliseconds
+Jun 28, 2016 1:04:55 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_UpdateFlags" in 6.2 milliseconds [nodes 7=0+7, 1,136.9 nodes/sec]
+Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_UpdateFlags" in 1.558 seconds
+Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.6 milliseconds
 
-Apr 28, 2016 5:26:24 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_UpdateFlags" in 8.3 milliseconds
+Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_UpdateFlags" in 3.9 milliseconds
 
-Apr 28, 2016 5:26:24 PM com.collaxa.cube.CubeLogger info
+Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
 INFO: validating "BP_SaveUserComments.bpel" ...
-Apr 28, 2016 5:26:24 PM com.collaxa.cube.CubeLogger info
-INFO: Composed "BP_SaveUserComments" in 17.1 milliseconds [nodes 7=0+7, 408.8 nodes/sec]
-Apr 28, 2016 5:26:27 PM com.collaxa.cube.CubeLogger info
-INFO: Compiled "BP_SaveUserComments" in 2.918 seconds
-Apr 28, 2016 5:26:27 PM com.collaxa.cube.CubeLogger info
-INFO: Gathered 3 files in 0.7 milliseconds
+Jun 28, 2016 1:04:57 PM com.collaxa.cube.CubeLogger info
+INFO: Composed "BP_SaveUserComments" in 17.9 milliseconds [nodes 7=0+7, 391.2 nodes/sec]
+Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
+INFO: Compiled "BP_SaveUserComments" in 1.577 seconds
+Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
+INFO: Gathered 3 files in 0.6 milliseconds
 
-Apr 28, 2016 5:26:27 PM com.collaxa.cube.CubeLogger info
-INFO: Packaged "BP_SaveUserComments" in 5.2 milliseconds
+Jun 28, 2016 1:04:59 PM com.collaxa.cube.CubeLogger info
+INFO: Packaged "BP_SaveUserComments" in 3.6 milliseconds
 
