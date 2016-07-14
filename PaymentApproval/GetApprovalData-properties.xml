@@ -36,6 +36,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_PAYMENT_ID:db_column_scale">0</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_DATE:db_column_type">DATE</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_PAYMENT_ID:db_column_not_null">true</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_20">ORGANIZATION</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_PAYMENT_ID:db_column_precision">15</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.PERSON_ID:db_column_precision">15</entry>
    <entry key="return_single_result_set">false</entry>
@@ -58,6 +59,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_11">PAYMENT_DATE</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA:db_column_10">VENDOR_NAME</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_AMOUNT:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.ORGANIZATION:db_column_not_null">false</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_NO:db_column_type">VARCHAR2</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.PAYMENT_DATE:db_column_type">DATE</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ST_WITH_HOLDING:db_column_type">NUMBER</entry>
@@ -76,6 +78,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA.BATCH_ID:db_column_precision">15</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.CHECK_ID:db_column_precision">15</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.PERSON_ID:db_column_type">NUMBER</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.ORGANIZATION:db_column_size">150</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_AMOUNT:db_column_type">NUMBER</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ADVANCE_PAYMENT_APPLIED:db_column_precision">0</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ST_WITH_HOLDING:db_column_precision">0</entry>
@@ -86,6 +89,7 @@
    <entry key="XX_PAYMENT_APPROVAL_DATA.INVOICE_ID:db_column_scale">0</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.CHECK_NO:db_column_not_null">true</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.ST_WITH_HOLDING:db_column_not_null">false</entry>
+   <entry key="XX_PAYMENT_APPROVAL_DATA.ORGANIZATION:db_column_type">VARCHAR2</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.VENDOR_NAME:db_column_not_null">false</entry>
    <entry key="XX_PAYMENT_APPROVAL_DATA.CHECK_NO:db_column_type">NUMBER</entry>
 </properties>

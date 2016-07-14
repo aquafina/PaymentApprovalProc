@@ -96,7 +96,7 @@
                             query="/EmailPayload/ns2:FromUserName"/>
                     </copy>
                     <copy>
-                        <from expression="string('')"/>
+                        <from expression="string('usmanriaz@nishat.net')"/>
                         <to variable="varNotificationReq" part="EmailPayload"
                             query="/EmailPayload/ns2:Bcc"/>
                     </copy>
@@ -121,33 +121,7 @@
                             query="/EmailPayload/ns2:To"/>
                     </copy>
                     <copy>
-                        <from expression="concat(ora:toCDATA(&quot;&lt;html>&lt;head>&quot;), string('    
-	 '), ora:toCDATA(&quot;&lt;style>&quot;), string('      
-		 '), ora:toCDATA(&quot;tr{&quot;), string('          
-			'), ora:toCDATA(&quot;background:#deebf6;&quot;), string('   
-	            	'), ora:toCDATA(&quot;padding:8px;&quot;), string('       
-		'), ora:toCDATA(&quot;}&quot;), string('  
-		 '), ora:toCDATA(&quot;#footer{&quot;), string('    
-			'), ora:toCDATA(&quot;background:#ffffff;&quot;), string('    
-			'), ora:toCDATA(&quot;color:#777879;&quot;), string('   
-		'), ora:toCDATA(&quot;}&quot;), string('  
-	'), ora:toCDATA(&quot;&lt;/style>&quot;), string('  
-	'), ora:toCDATA(&quot;&lt;/head>&quot;), string('    
-	'), ora:toCDATA(&quot;&lt;body>&quot;), string('    
-		'), ora:toCDATA(&quot;&lt;div id=main_div>&quot;), string('       
-			'), ora:toCDATA(&quot;&lt;center>&quot;), string('       
-				'), ora:toCDATA(&quot;&lt;table>&quot;), string('       
-					'), ora:toCDATA(&quot;&lt;TR>&quot;), string('           
-						'), ora:toCDATA(&quot;&lt;TD>&quot;), string('Reference  '), ora:toCDATA(&quot;&lt;/TD>&quot;), string('           
-						'), ora:toCDATA(&quot;&lt;TD>&lt;p>&quot;), bpws:getVariableData('inputVariable','payload','/ns1:Email/ns1:body'), string('																	   						'), ora:toCDATA(&quot;&lt;/p>&lt;/TD>&quot;), string('       
-					'), ora:toCDATA(&quot;&lt;/TR>&quot;), string('     
-					'), ora:toCDATA(&quot;&lt;TR>&quot;), string('             
-						'), ora:toCDATA(&quot;&lt;TD colspan=2 id=footer>&lt;/br>&lt;/br>&quot;), string('This is a system generated email'), ora:toCDATA(&quot;&lt;/TD>&quot;), string('         					'), ora:toCDATA(&quot;&lt;/TR>&quot;), string('        
-				'), ora:toCDATA(&quot;&lt;/table>&quot;), string('      
-			'), ora:toCDATA(&quot;&lt;/h3>&lt;/center>&quot;), string('       
-		'), ora:toCDATA(&quot;&lt;/div>&quot;), string('     
-	'), ora:toCDATA(&quot;&lt;/body>&quot;), string('
-'), ora:toCDATA(&quot;&lt;/html>&quot;), string('    '))"/>
+                        <from expression="concat(ora:toCDATA(&quot;&lt;html>&lt;head>&quot;), string('       '), ora:toCDATA(&quot;&lt;style>&quot;), string('          '), ora:toCDATA(&quot;tr{&quot;), string('              '), ora:toCDATA(&quot;background:#deebf6;&quot;), string('                  '), ora:toCDATA(&quot;padding:8px;&quot;), string('          '), ora:toCDATA(&quot;}&quot;), string('      '), ora:toCDATA(&quot;#footer{&quot;), string('        '), ora:toCDATA(&quot;background:#ffffff;&quot;), string('        '), ora:toCDATA(&quot;color:#777879;&quot;), string('      '), ora:toCDATA(&quot;}&quot;), string('    '), ora:toCDATA(&quot;&lt;/style>&quot;), string('    '), ora:toCDATA(&quot;&lt;/head>&quot;), string('      '), ora:toCDATA(&quot;&lt;body>&quot;), string('       '), ora:toCDATA(&quot;&lt;div id=main_div>&quot;), string('           '), ora:toCDATA(&quot;&lt;center>&quot;), string('            '), ora:toCDATA(&quot;&lt;table>&quot;), string('             '), ora:toCDATA(&quot;&lt;TR>&quot;), string('                  '), ora:toCDATA(&quot;&lt;TD>&quot;), string('Reference  '), ora:toCDATA(&quot;&lt;/TD>&quot;), string('                  '), ora:toCDATA(&quot;&lt;TD>&lt;p>&quot;), bpws:getVariableData('inputVariable','payload','/ns1:Email/ns1:body'), string('                          '), ora:toCDATA(&quot;&lt;/p>&lt;/TD>&quot;), string('             '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('           '), ora:toCDATA(&quot;&lt;TR>&quot;), string('                    '), ora:toCDATA(&quot;&lt;TD colspan=2 id=footer>&lt;/br>&lt;/br>&quot;), string('This is a system generated email'), ora:toCDATA(&quot;&lt;/TD>&quot;), string('              '), ora:toCDATA(&quot;&lt;/TR>&quot;), string('             '), ora:toCDATA(&quot;&lt;/table>&quot;), string('          '), ora:toCDATA(&quot;&lt;/h3>&lt;/center>&quot;), string('          '), ora:toCDATA(&quot;&lt;/div>&quot;), string('       '), ora:toCDATA(&quot;&lt;/body>&quot;), string(' '), ora:toCDATA(&quot;&lt;/html>&quot;), string('    '))"/>
                         <to variable="varNotificationReq" part="EmailPayload"
                             query="/EmailPayload/ns2:Content/ns2:ContentBody"/>
                     </copy>

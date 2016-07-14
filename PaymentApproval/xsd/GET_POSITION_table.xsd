@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/GET_POSITION" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/GET_POSITION" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="XxEmployeeOrgChartVCollection" type="XxEmployeeOrgChartVCollection"/>
+   <xs:complexType name="XxEmployeeOrgChartVCollection">
+      <xs:sequence>
+         <xs:element name="XxEmployeeOrgChartV" type="XxEmployeeOrgChartV" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="XxEmployeeOrgChartV">
+      <xs:sequence>
+         <xs:element name="hierarchyName" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="30"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="parentPositionId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="fullNameParent" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="240"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="parentPersonId" type="xs:decimal" minOccurs="0" nillable="true"/>
+         <xs:element name="parentPosition" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="subordinatePositionId" type="xs:long" minOccurs="0" nillable="true"/>
+         <xs:element name="childPosition" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="4000"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="empCode" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="150"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="emailAddress" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="240"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="joining" minOccurs="0" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="150"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="fullNameChild" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="240"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
+         <xs:element name="childPersonId" type="xs:long" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="GET_POSITIONSelect_NAMEInputParameters" type="GET_POSITIONSelect_NAME"/>
+   <xs:complexType name="GET_POSITIONSelect_NAME">
+      <xs:sequence>
+         <xs:element name="NAME" type="xs:string" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

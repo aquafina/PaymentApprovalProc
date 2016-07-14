@@ -1,0 +1,14 @@
+<adapter-config name="GET_POSITION" adapter="Database Adapter" wsdlLocation="GET_POSITION.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="GET_POSITION_ptt" operation="GET_POSITIONSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="GET_POSITION.XxEmployeeOrgChartV"/>
+      <property name="QueryName" value="GET_POSITIONSelect"/>
+      <property name="MappingsMetaDataURL" value="GET_POSITION-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

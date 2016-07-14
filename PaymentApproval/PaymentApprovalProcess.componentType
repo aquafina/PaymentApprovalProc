@@ -51,4 +51,12 @@
              ui:wsdlLocation="GetNextApprover1.wsdl">
     <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GetNextApprover1#wsdl.interface(GetNextApprover1_ptt)"/>
   </reference>
+  <reference name="Services.Externals.GET_MANAGER.reference"
+             ui:wsdlLocation="GET_MANAGER.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GET_MANAGER#wsdl.interface(GET_MANAGER_ptt)"/>
+  </reference>
+  <reference name="Services.Externals.GET_POSITION.reference"
+             ui:wsdlLocation="GET_POSITION.wsdl">
+    <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/PaymentApprovalProcess/PaymentApproval/GET_POSITION#wsdl.interface(GET_POSITION_ptt)"/>
+  </reference>
 </componentType>

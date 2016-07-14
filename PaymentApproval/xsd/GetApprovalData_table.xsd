@@ -58,13 +58,20 @@
          <xs:element name="invoicePaymentId" type="xs:long"/>
          <xs:element name="invoiceId" type="xs:long"/>
          <xs:element name="personId" type="xs:long" nillable="true"/>
+         <xs:element name="organization" nillable="true">
+            <xs:simpleType>
+               <xs:restriction base="xs:string">
+                  <xs:maxLength value="150"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:element>
       </xs:sequence>
    </xs:complexType>
    <xs:element name="GetApprovalDataSelect_check_id_batch_idInputParameters" type="GetApprovalDataSelect_check_id_batch_id"/>
    <xs:complexType name="GetApprovalDataSelect_check_id_batch_id">
       <xs:sequence>
-         <xs:element name="check_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
-         <xs:element name="batch_id" type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="check_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
+         <xs:element name="batch_id" type="xs:long" minOccurs="1" maxOccurs="1"/>
       </xs:sequence>
    </xs:complexType>
 </xs:schema>

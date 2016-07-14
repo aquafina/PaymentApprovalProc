@@ -6,26 +6,27 @@
          <class>GetApprovalData.XxPaymentApprovalData</class>
          <alias>XX_PAYMENT_APPROVAL_DATA</alias>
          <primary-key>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="PAYMENT_VR" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_NO" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_DATE" xsi:type="column"/>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_AMOUNT" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="ADVANCE_PAYMENT_APPLIED" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_AMOUNT" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="GROSS_AMOUNT_PAID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="WHT" xsi:type="column"/>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="ST_WITH_HOLDING" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="NET_AMOUNT_PAID" xsi:type="column"/>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="VENDOR_NAME" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="ST_WITH_HOLDING" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="DIVISION" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="PAYMENT_DATE" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="VENDOR_NAME" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="BANK_NAME" xsi:type="column"/>
-            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="CHECK_NO" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_NAME" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="INVOICE_PAYMENT_ID" xsi:type="column"/>
             <field table="XX_PAYMENT_APPROVAL_DATA" name="PERSON_ID" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="ORGANIZATION" xsi:type="column"/>
+            <field table="XX_PAYMENT_APPROVAL_DATA" name="BATCH_ID" xsi:type="column"/>
          </primary-key>
          <events/>
          <querying>
@@ -164,6 +165,11 @@
                <attribute-name>personId</attribute-name>
                <field table="XX_PAYMENT_APPROVAL_DATA" name="PERSON_ID" xsi:type="column"/>
                <attribute-classification>java.lang.Long</attribute-classification>
+            </attribute-mapping>
+            <attribute-mapping xsi:type="direct-mapping">
+               <attribute-name>organization</attribute-name>
+               <field table="XX_PAYMENT_APPROVAL_DATA" name="ORGANIZATION" xsi:type="column"/>
+               <attribute-classification>java.lang.String</attribute-classification>
             </attribute-mapping>
          </attribute-mappings>
          <descriptor-type>independent</descriptor-type>

@@ -25,9 +25,13 @@
       </globalConfiguration>
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1">
-            <participant name="default.DefaultPerformer">
+            <parallel collaboration="false" name="default.DefaultPerformer">
+               <vote>
+                  <defaultOutcome type="STATIC">REJECT</defaultOutcome>
+                  <outcomePercentage type="STATIC">50</outcomePercentage>
+               </vote>
                <resource type="XPATH" identityType="user">/task:task/task:payload/ns3:singleString</resource>
-            </participant>
+            </parallel>
          </stage>
       </participants>
       <notification includeTaskAttachments="false" actionable="false"
@@ -44,7 +48,8 @@
                           xmlns:ns0="http://xmlns.oracle.com/singleString" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration"
                           xmlns:ns1="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetApprovalData"
                           xmlns:ns2="http://xmlns.oracle.com/pcbpel/adapter/db/top/GetNextApprover"
-                          xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                          xmlns:ns3="http://xmlns.oracle.com/singleString">
       <outcomes>
          <outcome>APPROVE</outcome>
          <outcome>REJECT</outcome>
@@ -56,7 +61,7 @@
                            type="ns1:XxPaymentApprovalDataCollection"
                            updatable="false" external="false"/>
          <messageAttribute name="singleString" attributeType="ELEMENT"
-                           type="ns0:singleString" updatable="false"
+                           type="ns3:singleString" updatable="false"
                            external="false"/>
       </payload>
       <bpelEventListener>false</bpelEventListener>

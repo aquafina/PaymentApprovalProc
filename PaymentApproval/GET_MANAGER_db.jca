@@ -1,0 +1,14 @@
+<adapter-config name="GET_MANAGER" adapter="Database Adapter" wsdlLocation="GET_MANAGER.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+  
+  <connection-factory location="eis/DB/applive" UIConnectionName="applive" adapterRef=""/>
+  <endpoint-interaction portType="GET_MANAGER_ptt" operation="GET_MANAGERSelect">
+    <interaction-spec className="oracle.tip.adapter.db.DBReadInteractionSpec">
+      <property name="DescriptorName" value="GET_MANAGER.XxGrnAprMgr"/>
+      <property name="QueryName" value="GET_MANAGERSelect"/>
+      <property name="MappingsMetaDataURL" value="GET_MANAGER-or-mappings.xml"/>
+      <property name="ReturnSingleResultSet" value="false"/>
+      <property name="GetActiveUnitOfWork" value="false"/>
+    </interaction-spec>
+  </endpoint-interaction>
+
+</adapter-config>

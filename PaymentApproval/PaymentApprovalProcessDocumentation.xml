@@ -82,7 +82,7 @@
             </topicDocumentation>
             <topicDocumentation name="ACT1588461779586">
                 <labels>
-                    <label locale="en">INIT_FLAG</label>
+                    <label locale="en">UPDATE_LINES_INIT_FLAG</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -123,6 +123,62 @@
             <topicDocumentation name="ACT16016091467929">
                 <labels>
                     <label locale="en">GET_FEEDER_EMAIL</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16551400201166">
+                <labels>
+                    <label locale="en">GET_DYEING_APPROVER</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT1655152872545">
+                <labels>
+                    <label locale="en">APPROVER=MANGER_AND_HOD</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16551550430369">
+                <labels>
+                    <label locale="en">APPROVER=AM</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16568799387151">
+                <labels>
+                    <label locale="en">ALTERNATE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16568971376138">
+                <labels>
+                    <label locale="en">GET_MANAGER_BY_HIERARCHY</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16569005313243">
+                <labels>
+                    <label locale="en">MANAGER=IMIDIATE</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="ACT16578264848572">
+                <labels>
+                    <label locale="en">GET_POSITION</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -189,14 +245,6 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT16551400201166">
-                <labels>
-                    <label locale="en">GET_NEXT_APPROVER1</label>
-                </labels>
-                <descriptions>
-                    <description locale="en"></description>
-                </descriptions>
-            </topicDocumentation>
             <topicDocumentation name="GTW16551439609215">
                 <labels>
                     <label locale="en">IS_PARENT_A_MANAGER</label>
@@ -205,17 +253,25 @@
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT1655152872545">
+            <topicDocumentation name="GTW16558979807872">
                 <labels>
-                    <label locale="en">MANGER_AND_HOD</label>
+                    <label locale="en">IS_APPROVER_MANAGER_OR_HOD</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
-            <topicDocumentation name="ACT16551550430369">
+            <topicDocumentation name="GTW16568790580039">
                 <labels>
-                    <label locale="en">AM</label>
+                    <label locale="en">HTD</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="GTW16568830060760">
+                <labels>
+                    <label locale="en">DYEING</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
@@ -343,13 +399,58 @@
             <topicDocumentation name="sf62"/>
             <topicDocumentation name="sf64">
                 <labels>
-                    <label locale="en">AM</label>
+                    <label locale="en">NO</label>
                 </labels>
                 <descriptions>
                     <description locale="en"></description>
                 </descriptions>
             </topicDocumentation>
             <topicDocumentation name="sf67"/>
+            <topicDocumentation name="sf61">
+                <labels>
+                    <label locale="en">YES</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf68">
+                <labels>
+                    <label locale="en">NO</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf71">
+                <labels>
+                    <label locale="en">YES</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf75"/>
+            <topicDocumentation name="sf77"/>
+            <topicDocumentation name="sf78">
+                <labels>
+                    <label locale="en">YES</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf80">
+                <labels>
+                    <label locale="en">NOT_DYEING</label>
+                </labels>
+                <descriptions>
+                    <description locale="en"></description>
+                </descriptions>
+            </topicDocumentation>
+            <topicDocumentation name="sf81"/>
+            <topicDocumentation name="sf82"/>
+            <topicDocumentation name="sf83"/>
         </topicDocumentations>
     </component>
 </processDocumentation>
